@@ -2,20 +2,23 @@ import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: undefined,
-			precompress: false,
-			strict: true
-		}),
-		prerender: {
-			handleHttpError: 'warn',
-			handleMissingId: 'warn',
-			entries: ['*'] // Prerender toutes les routes découvertes
-		}
-	}
+    kit: {
+        adapter: adapter({
+            pages: 'build',
+            assets: 'build',
+            fallback: undefined,
+            precompress: false,
+            strict: true
+        }),
+        paths: {
+		base: process.env.NODE_ENV === 'production' ? '/Portfolio-2.0' : ''
+		},
+        prerender: {
+            handleHttpError: 'warn',
+            handleMissingId: 'warn',
+            entries: ['*'] // Prerender toutes les routes découvertes
+        }
+    }
 };
 
 export default config;
