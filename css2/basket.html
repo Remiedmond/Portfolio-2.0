@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation avec GSAP et ScrollReveal</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+    <h1 class="NBA"> Le Premier Tir à Trois Points en NBA (1979) 🎯🏀</h1>
+    <section class="tt">
+        <div class="joueur"><img src="joueur.png" alt="joueur"></div>        
+        <div class="ballon"><img src="ballon.png" alt="Ballon"></div>
+        <div class="droite"><img src="Basket.png" alt="Panier de basket"></div>
+        <div class="panier"><img src="panier.png" alt="Panier"></div>
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="basket.mp4" type="video/mp4">
+            </video>
+        </div>
+        <img class="Basketeur" src="Basketeur.png" alt="Basketeur">
+        <img class="Basketeur2" src="Basketeur2.png" alt="Basketeur">
+    </section>
+    <p class="NBA2"> Le premier tir à trois points de l’histoire de la NBA a été inscrit par Chris Ford des Boston Celtics le 12 octobre 1979 lors d'un match contre les Houston Rockets.
+    </br> Cette saison 1979-80 était la première où la NBA introduisait la ligne à trois points🎯🏀</p>
+   
+
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+        }
+        .tt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5rem;
+            position: relative;
+            width: 100%;
+            
+        }
+
+         .NBA{
+           margin:  4rem;
+            
+        }
+
+        .ballon {
+            position: absolute;
+            left: 110px;
+            top: 130px;
+            z-index: 10;
+        }
+        .joueur {
+            position: absolute;
+            left: 10px;
+            top: 120px;
+            z-index: 10;
+        }
+
+        .ballon img {
+            width: 5rem;
+        }
+
+        .droite {
+            position: absolute;
+            left: 1000px;
+            top: 10px;
+            z-index: 1;
+        }
+
+        .panier {
+            position: absolute;
+            left: 1000px;
+            top: 10px;
+            z-index: 1000;
+        }
+
+        .video-container {
+            position: relative;
+            margin-top: 2rem ;
+           margin-left: 40%;
+            width: 100%;
+            max-width: 250px;
+            border-radius: 20%;
+        }
+        .NBA2{
+          text-align: center;
+          padding: 4rem;
+            
+        }
+        .Basketeur{
+            position: absolute;
+            left: 17%;
+            top: 10%;
+            z-index: 4;
+            width: 300px;
+        }
+        .Basketeur2{
+            position: absolute;
+            left: 52%;
+            top: 10%;
+            z-index: 4;
+            width: 400px;
+        }
+
+      
+
+        @media (max-width: 768px) {
+            .tt {
+                margin-top: 5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ballon {
+                position: absolute;
+                top: 80px;
+                left: 15%;
+            }
+
+            .ballon img {
+                width: 2rem;
+            }
+
+            .joueur {
+                position: absolute;
+                top: 70px;
+                left: 1%;
+                
+            }
+            .joueur img {
+              
+                width: 40%;
+            }
+
+            .droite {
+                position: absolute;
+                left: 60%;
+                top: 0;
+                right: 0;
+                margin-top: 1rem;
+                z-index: 1;
+            }
+
+            .droite img {
+                width: 130%;
+            }
+
+            .panier {
+                left: 60%;
+                top: 0;
+                right: 0;
+                margin-top: 1rem;
+                z-index: 1000;
+            }
+
+            .panier img {
+                width: 130%;
+            }
+
+            .video-container {
+            position: relative;
+            margin-top: 19rem;
+            margin-left: 2rem;
+            width: 100%;
+            max-width: 140px;
+            margin-right: 1rem;
+          
+        }
+
+        .NBA{
+            font-size: medium;  
+            margin-bottom: -4rem;  
+            text-align: center;        
+        }
+
+        .NBA2{
+          text-align: center;
+          font-size: small;
+          margin-top: -34.5rem; 
+          margin-left: 2rem;
+          margin-right: 2rem;
+            
+        }
+        .Basketeur{
+            position: absolute;
+            left: 2%;
+            top: 62%;
+            z-index: 4;
+            width: 100px;
+        }
+        .Basketeur2{
+            position: absolute;
+            left: 62%;
+            top: 58%;
+            z-index: 4;
+            width: 170px;
+        }
+        }
+    </style>
+
+<script>
+    const mma = gsap.matchMedia();
+    const breakPoint = 800;
+
+    // Fonction de gestion du rechargement
+    let previousIsMobile = window.innerWidth < breakPoint;
+    window.addEventListener('resize', function () {
+        const isMobile = window.innerWidth < breakPoint;
+        if (isMobile !== previousIsMobile) {
+            // Si on change d'état entre mobile et desktop, on recharge la page
+            previousIsMobile = isMobile;
+            location.reload();
+        }
+    });
+
+    mma.add(
+        {
+            isDesktop: `(min-width: ${breakPoint}px)`,
+            isMobile: `(max-width: ${breakPoint - 1}px)`
+        },
+        (context) => {
+            let { isDesktop, isMobile } = context.conditions;
+
+            if (isDesktop) {
+                gsap.to(".joueur", { y: -200, duration: 0.5,repeat:1, yoyo: true} )
+                document.addEventListener("DOMContentLoaded", function () {
+                    let x = 1150, y = -550;
+
+                    ScrollReveal().reveal('.ballon', {
+                        reset: false,
+                        duration: 2.5,
+                        beforeReveal: () => {
+                            let tl = gsap.timeline();
+
+                            tl.to(".ballon", {
+                                x: x,
+                                y: y+10,
+                                duration: 2.5,
+                                ease: "power1.out",
+                                rotation: 360,
+                            }, 0)
+                                .to(".ballon", {
+                                    y: y + 115,
+                                    duration: 0.7,
+                                    ease: "power1.out"
+                                }, 0.8)
+                                .to(".ballon", {
+                                    y: y + 335,
+                                    duration: 1,
+                                    ease: "power1.out",
+                                    rotation: 160,
+                                }, 1.45)
+                                .to(".ballon", {
+                                    y: 270,
+                                    duration: 1.2,
+                                    ease: "bounce.out",
+                                    rotation: 60,
+                                }, 1.5);
+                        }
+                    });
+
+                    ScrollReveal().reveal('.panier', { duration: 2 });
+                    ScrollReveal().reveal('.droite', { duration: 2 });
+                });
+            } else if (isMobile) {
+                gsap.to(".joueur", { y: -100, duration: 0.5,repeat:1, yoyo: true} )
+                document.addEventListener("DOMContentLoaded", function () {
+                    let x = 240, y = -200;
+
+                    ScrollReveal().reveal('.ballon', {
+                        reset: false,
+                        duration: 1.9,
+                        beforeReveal: () => {
+                            let tl = gsap.timeline();
+                            tl.to(".ballon", {
+                                x: x,
+                                y: y,
+                                duration: 1.5,
+                                ease: "power1.out",
+                                rotation: 360,
+                            }, 0)
+                                .to(".ballon", {
+                                    y: y + 90,
+                                    duration: 0.7,
+                                    ease: "power1.out",
+                                    rotation: 360,
+                                }, 0.5)
+                                .to(".ballon", {
+                                    y: 100,
+                                    duration: 1,
+                                    ease: "bounce.out",
+                                    rotation: 60,
+                                }, 0.9);
+                        }
+                    });
+
+                    ScrollReveal().reveal('.panier', { duration: 2 });
+                    ScrollReveal().reveal('.droite', { duration: 2 });
+                });
+            }
+        }
+    );
+</script>
+
+</body>
+
+</html>

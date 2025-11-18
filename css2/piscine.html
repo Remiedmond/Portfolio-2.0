@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document3</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: true });
+    </script>
+    <style>
+  
+
+      .tt {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .imgf {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 2rem auto;
+      }
+
+      .imgf img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+      }
+
+      .nageur1, .nageur2, .nageur4, .nageur5, .nageur6, .nageur7, .nageur8 {
+        background: firebrick;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      .nageur1 { top: 17.5%; left: 72.5%; }
+      .nageur2 { top: 26.5%; left: 72.5%; }
+      .nageur4 { top: 43.5%; left: 72.5%; }
+      .nageur5 { top: 52.2%; left: 72.5%; }
+      .nageur6 { top: 60.8%; left: 72.5%; }
+      .nageur7 { top: 69.8%; left: 72.5%; }
+      .nageur8 { top: 78.8%; left: 72.5%; }
+
+      .nageurimg {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        overflow: hidden;
+        top: 35%;
+        left: 72.5%;
+      }
+
+      .nageurimg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 1300px) {
+        .nageur1 { top: 17.5%; left: 78%; }
+      .nageur2 { top: 26.5%; left: 78%; }
+      .nageur4 { top: 43.5%; left: 78%; }
+      .nageur5 { top: 52.2%; left: 78%; }
+      .nageur6 { top: 60.8%; left: 78%; }
+      .nageur7 { top: 69.8%; left: 78%; }
+      .nageur8 { top: 78.8%; left: 78%; }
+
+      .nageurimg {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        overflow: hidden;
+        top: 35%;
+        left: 78%;
+      }
+      }
+
+      @media (max-width: 1100px) {
+        .nageur1 { top: 17.5%; left: 85%; }
+      .nageur2 { top: 26.5%; left: 85%; }
+      .nageur4 { top: 43.5%; left: 85%; }
+      .nageur5 { top: 52.2%; left: 85%; }
+      .nageur6 { top: 60.8%; left: 85%; }
+      .nageur7 { top: 69.8%; left: 85%; }
+      .nageur8 { top: 78.8%; left: 85%; }
+
+      .nageurimg {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        overflow: hidden;
+        top: 35%;
+        left: 85%;
+      }
+      }
+
+      @media (max-width: 975px) {
+        .nageur1 { top: 17.5%; left: 92%; }
+      .nageur2 { top: 26.5%; left: 92%; }
+      .nageur4 { top: 43.5%; left: 92%; }
+      .nageur5 { top: 52.2%; left: 92%; }
+      .nageur6 { top: 60.8%; left: 92%; }
+      .nageur7 { top: 69.8%; left: 92%; }
+      .nageur8 { top: 78.8%; left: 92%; }
+
+      .nageurimg {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        overflow: hidden;
+        top: 35%;
+        left: 92%;
+      }
+      }
+
+
+      @media (max-width: 600px) {
+        .nageur1 { top: 20.5%; left: 90%; }
+      .nageur2 { top: 28.5%; left: 90%; }
+      .nageur4 { top: 43.5%; left: 90%; }
+      .nageur5 { top: 50.2%; left: 90%; }
+      .nageur6 { top: 57.8%; left: 90%; }
+      .nageur7 { top: 64.8%; left: 90%; }
+      .nageur8 { top: 72.8%; left: 90%; }
+      
+      .nageurimg {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        overflow: hidden;
+        top: 36%;
+        left: 90%;
+      }
+
+        .imgf img {
+          max-width: 100%;
+        }
+        .nageur1, .nageur2, .nageur4, .nageur5, .nageur6, .nageur7, .nageur8, .nageurimg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    </style>
+</head>
+<body>
+  <section class="tt">
+    <div class="imgf">
+      <img src="6793264-piscine-sportive-vue-de-dessus-piscine-huit-pistes-vectoriel.jpg" alt="Vue de piscine">
+    </div>
+
+    <div class="nageurimg"><img src="eu.webp" alt="Nageur"></div>
+    <div class="nageur1"></div>
+    <div class="nageur2"></div>
+    <div class="nageur4"></div>
+    <div class="nageur5"></div>
+    <div class="nageur6"></div>
+    <div class="nageur7"></div>
+    <div class="nageur8"></div>
+  </section>
+
+  <script>    
+    const mm = gsap.matchMedia();
+const breakPoint = 800;
+
+mm.add(
+  {
+    isDesktop: `(min-width: ${breakPoint}px)`,
+    isMobile: `(max-width: ${breakPoint - 1}px)`
+  },
+  (context) => {
+    let { isDesktop, isMobile } = context.conditions;
+
+    if (isDesktop) {
+      ScrollReveal().reveal('.nageur1', { duration: 2 });
+      ScrollReveal().reveal('.nageur2', { duration: 2 });
+      ScrollReveal().reveal('.nageurimg', { duration: 2 });
+      ScrollReveal().reveal('.nageur4', { duration: 2 });
+      ScrollReveal().reveal('.nageur5', { duration: 2 });
+      ScrollReveal().reveal('.nageur6', { duration: 2 });
+      ScrollReveal().reveal('.nageur7', { duration: 2 });
+      ScrollReveal().reveal('.nageur8', { duration: 2 });
+
+
+      const nageur1 = gsap.timeline({ repeat: 0 });
+      const nageur2 = gsap.timeline({ repeat: 0 });
+      const nageurimg = gsap.timeline({ repeat: 0 });
+      const nageur4 = gsap.timeline({ repeat: 0 });
+      const nageur5 = gsap.timeline({ repeat: 0 });
+      const nageur6 = gsap.timeline({ repeat: 0 });
+      const nageur7 = gsap.timeline({ repeat: 0 });
+      const nageur8 = gsap.timeline({ repeat: 0 });
+
+      nageur1.to(".nageur1", { x: -712, duration: 4.4, ease: "power1.inOut" })
+             .to(".nageur1", { x: -52, duration: 4.35, ease: "power1.inOut" });
+
+      nageur2.to(".nageur2", { x: -712, duration: 4.5, ease: "power1.inOut" })
+             .to(".nageur2", { x: -52, duration: 4.21, ease: "power1.inOut" });
+
+      nageurimg.to(".nageurimg", { x: -712, duration: 4.2, ease: "power1.inOut" })
+               .to(".nageurimg", { x: -52, duration: 4, ease: "power1.inOut", onComplete: () => {
+                  const message = document.createElement('div');
+                  message.textContent = "Michael Phelps wins Olympic Games!";
+                  message.style.cssText = `
+                    font-size: 24px;
+                    color: gold;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-top: 20px;`;
+                  document.body.appendChild(message);
+                }
+               });
+
+      nageur4.to(".nageur4", { x: -712, duration: 4.15, ease: "power1.inOut" })
+             .to(".nageur4", { x: -52, duration: 4.39, ease: "power1.inOut" });
+
+      nageur5.to(".nageur5", { x: -712, duration: 4.58, ease: "power1.inOut" })
+             .to(".nageur5", { x: -52, duration: 4.1, ease: "power1.inOut" });
+
+      nageur6.to(".nageur6", { x: -712, duration: 4.8, ease: "power1.inOut" })
+             .to(".nageur6", { x: -52, duration: 4.41, ease: "power1.inOut" });
+
+      nageur7.to(".nageur7", { x: -712, duration: 4.3, ease: "power1.inOut" })
+             .to(".nageur7", { x: -52, duration: 4.68, ease: "power1.inOut" });
+
+      nageur8.to(".nageur8", { x: -712, duration: 5, ease: "power1.inOut" })
+             .to(".nageur8", { x: -52, duration: 4.71, ease: "power1.inOut" });
+
+    } else if (isMobile) {
+
+      
+      const nageur1mobile = gsap.timeline({ repeat: 0 });
+      const nageur2mobile = gsap.timeline({ repeat: 0 });
+      const nageurimgmobile = gsap.timeline({ repeat: 0 });
+      const nageur4mobile = gsap.timeline({ repeat: 0 });
+      const nageur5mobile = gsap.timeline({ repeat: 0 });
+      const nageur6mobile = gsap.timeline({ repeat: 0 });
+      const nageur7mobile = gsap.timeline({ repeat: 0 });
+      const nageur8mobile = gsap.timeline({ repeat: 0 });
+
+
+
+      ScrollReveal().reveal('.nageur1mobile', { duration: 2 });
+      ScrollReveal().reveal('.nageur2mobile', { duration: 2 });
+      ScrollReveal().reveal('.nageurimgmobile', { duration: 2 });
+      ScrollReveal().reveal('.nageur4mobile', { duration: 2 });
+      ScrollReveal().reveal('.nageur5mobile', { duration: 2 });
+      ScrollReveal().reveal('.nageur6mobile', { duration: 2 });
+      ScrollReveal().reveal('.nageur7mobile', { duration: 2 });
+      ScrollReveal().reveal('.nageur8mobile', { duration: 2 });
+
+      nageur1mobile.to(".nageur1", { x: -297, duration: 4.4, ease: "power1.inOut" })
+             .to(".nageur1", { x: -30, duration: 4.35, ease: "power1.inOut" });
+
+      nageur2mobile.to(".nageur2", { x: -297, duration: 4.5, ease: "power1.inOut" })
+             .to(".nageur2", { x: -30, duration: 4.21, ease: "power1.inOut" });
+
+      nageurimgmobile.to(".nageurimg", { x: -297, duration: 4.2, ease: "power1.inOut" })
+               .to(".nageurimg", { x: -30, duration: 4, ease: "power1.inOut", onComplete: () => {
+                  const message = document.createElement('div');
+                  message.textContent = "Michael Phelps wins Olympic Games!";
+                  message.style.cssText = `
+                    font-size: 24px;
+                    color: gold;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-top: 20px;`;
+                  document.body.appendChild(message);
+                }
+               });
+
+      nageur4mobile.to(".nageur4", { x: -297, duration: 4.15, ease: "power1.inOut" })
+             .to(".nageur4", { x: -30, duration: 4.39, ease: "power1.inOut" });
+
+      nageur5mobile.to(".nageur5", { x: -297, duration: 4.58, ease: "power1.inOut" })
+             .to(".nageur5", { x: -30, duration: 4.1, ease: "power1.inOut" });
+
+      nageur6mobile.to(".nageur6", { x: -297, duration: 4.8, ease: "power1.inOut" })
+             .to(".nageur6", { x: -30, duration: 4.41, ease: "power1.inOut" });
+
+      nageur7mobile.to(".nageur7", { x: -297, duration: 4.3, ease: "power1.inOut" })
+             .to(".nageur7", { x: -30, duration: 4.68, ease: "power1.inOut" });
+
+      nageur8mobile.to(".nageur8", { x: -297, duration: 5, ease: "power1.inOut" })
+             .to(".nageur8", { x: -30, duration: 4.71, ease: "power1.inOut" });
+    }
+  }
+);
+
+  </script>
+</body>
+</html>
