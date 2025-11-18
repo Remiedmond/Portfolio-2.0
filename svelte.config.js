@@ -1,9 +1,11 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const dev = process.argv.includes('dev');
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: vitePreprocess(), // AJOUTEZ CETTE LIGNE
+  preprocess: vitePreprocess(),
   
   kit: {
     adapter: adapter({
@@ -14,12 +16,7 @@ const config = {
       strict: true
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/Portfolio-2.0' : ''
-    },
-    prerender: {
-      handleHttpError: 'warn',
-      handleMissingId: 'warn',
-      entries: ['*']
+      base: dev ? '' : '/Portfolio-2.0'
     }
   }
 };

@@ -15,7 +15,7 @@
     "backend:start": "cd backend && npm start",
     "backend:dev": "cd backend && npm run dev",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --dotfiles --remove '**/*' --add"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^6.0.0",
