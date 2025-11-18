@@ -13,9 +13,9 @@
 <div class="containerwzb">
      <div class="partiegaucheweb">
      <img src={gsappro} alt="Projet Grid" />
-       <a href="/css2/index.html">
-          En savoir +
-        </a>
+      <!-- <a href="/css2/index.html">
+  En savoir +
+</a> -->
     </div>
 
   <div class="">
