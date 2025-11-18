@@ -1,0 +1,143 @@
+.containerwzb {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin: 2rem;
+    background: #ffba90;
+    padding: 2rem 2rem;
+    gap: 2rem;
+    border-radius: 7px;
+}
+
+/* Partie gauche */
+.partiegaucheweb { 
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.partiegaucheweb img {
+    width: 100%;
+    max-width: 500px;
+    object-fit: contain;
+    height: auto;
+    border-radius: 5px;
+}
+
+.partiegaucheweb video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.partiegaucheweb a {
+    margin-top: 1rem;
+    text-decoration: none;
+    font-size: large;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.qrcodeduck{
+	display: flex;
+    flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    margin-top: 2rem;
+}
+.qrcodeduck img{
+    width: 20%;
+    border-radius: 10%;
+}
+
+/* Accueil / partie droite */
+.accueil {
+    max-width: 800px;
+    flex: 1 1 300px;
+}
+
+.text-center{
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    transform: rotate(-2deg);
+    margin-bottom: 2rem;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 4%;
+    background-color: #cf2626 ;
+}
+/* --- Responsive --- */
+
+/* Tablettes et petits écrans */
+
+@media screen and (max-width: 1300px) {
+   
+    .text-center{
+    font-size: 2rem;
+    transform: rotate(-1deg);
+    width: 40%;
+    padding: 0.8rem;
+    margin: 0 auto;    
+}
+}
+
+@media screen and (max-width: 992px) {
+    .containerwzb {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .partiegaucheweb,
+    .accueil {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .partiegaucheweb img {
+        max-width: 80%;
+    }
+    
+    .partiegaucheweb video {
+        max-width: 80%;
+        width: 80%;
+    }
+    .text-center{
+    font-size: 1rem;
+    transform: rotate(-1deg);
+    width: 80%;
+    padding: 0.8rem;    
+}
+}
+
+/* Smartphones */
+@media screen and (max-width: 576px) {
+    .containerwzb {
+        padding: 1rem;
+        margin: 1rem;
+        gap: 1rem;
+    }
+
+    .partiegaucheweb img {
+        max-width: 100%;
+    }
+    
+    .partiegaucheweb video {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .accueil {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,27 @@
+.bannière{
+    width: 100%;
+}
+
+.mention{
+    background: linear-gradient(90deg, #004aad, #1b1a1a);
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+    margin: 0 auto;
+   
+}
+
+.exclusive{
+    margin-top: -1rem;
+    padding: 3rem;
+    position: relative;
+}
+
+.hanballeurmention {
+  position: absolute;
+  top: 0%;
+  left: 59%;
+  width: 550px; 
+  height: auto;
+  transform: rotate(10deg);
+}
+

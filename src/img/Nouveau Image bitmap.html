@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+   
+    <style>
+        body{
+              background: linear-gradient(90deg, #1b1a1a, #004aad);
+            color: white;
+  padding: 1rem;
+  font-family: 'League Spartan', sans-serif;
+        }
+    
+
+        .competences-container {
+            width: 100%;
+            background: linear-gradient(90deg, #1b1a1a, #004aad);
+            border-top: 4px solid white;
+            border-bottom: 4px solid white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scrolling-text {
+            font-size: 80px;
+            font-weight: bold;
+            color: white;
+            white-space: nowrap;
+            animation: scrollRight 8s linear infinite;
+            padding: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Animation de défilement de droite à gauche */
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .scrolling-text {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scrolling-text {
+                font-size: 35px;
+            }
+        }
+
+
+.section2 {
+background-color: #3c74ba ;
+border-radius: 10px;
+padding:  1rem;
+border-radius:0;
+
+}
+
+.section2 span {
+color: #fd3030;
+}
+.section-title {
+  font-size: 50px;
+  font-family: 'League Spartan', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.compts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: space-evenly;
+  margin: 20px auto;
+}
+
+.Dev {
+  text-align: center;
+  background-color: #fecb66;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.Dev:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+#devweb {
+  background-image: url("https://ewm.swiss/application/files/4016/0396/6469/World_Wide_Web_EWM_Web_Design_Agency_.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+#communication {
+  background-image: url("https://img.freepik.com/free-photo/interviewer-reading-applicants-long-resume_1163-5302.jpg");
+  background-size: cover;
+}
+
+#audiovisuel {
+  background-image: url('https://cdn.prod.website-files.com/6259471f6732ed1b7835d9a7/64133b61194392d141081608_M%C3%A9tier%20artistique%20def.jpeg');
+  background-size: cover;
+  border-color: #fecb66;
+}
+
+.sub-title {
+  font-size: 30px;
+  font-family: 'League Spartan', sans-serif;
+  color: #000;
+  padding-bottom: 15px;
+}
+
+.skills-title {
+  font-size: 20px;
+  font-family: 'League Spartan', sans-serif;
+  color: #fff;
+  padding-bottom: 15px;
+}
+
+.section2 .compts i {
+  font-size: 48px;
+  color: #fff;
+  background-color: #fd3030;
+  border-radius: 50%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  transition: transform 0.3s ease;
+}
+
+.section2 i:hover {
+  transform: scale(1.1);
+}
+
+.compts h3 {
+  color: #fecb66;
+  background-color: #3c74ba;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.logo2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo2 img {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.logo2 img:hover {
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 768px) {
+  .compts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .compts {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="competences-container">
+            <div class="scrolling-text" id="scrollingText">
+                MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES | MES COMPÉTENCES
+            </div>
+        </div>
+        
+    </div>
+<div class="compts">
+
+  <div class="Dev" id="devweb">
+    <h1 class="sub-title"> <span class="highlight">Développement</span> Web</h1>
+    <i class='bx bxs-network-chart'></i>
+
+    <h3 class="skills-title">Front-end :</h3>
+    <div class="logo2" id="marge">
+      <img src="html.png" alt="Logo HTML">
+      <img src="css.png" alt="Logo CSS">
+      <img src="js.png" alt="Logo JavaScript">
+    </div>
+
+    <h3 class="skills-title">Back-end :</h3>
+    <div class="logo2">
+      <img src="pgp.png" alt="Logo PHP">
+      <img src="python.png" alt="Logo Python">
+      <img src="mysql.png" alt="Logo MySQL">
+    </div>
+
+    <h3 class="skills-title">Autres Outils :</h3>
+    <div class="logo2">
+      <img src="git.png" alt="Logo GitHub">
+      <img src="ux-ui.png" alt="Logo UX/UI">
+    </div>
+  </div>
+
+  <div class="Dev" id="communication">
+    <h1 class="sub-title">Communication / Design</h1>
+    <i class='bx bx-message-rounded-dots'></i>
+
+    <h3 class="skills-title">Logos / Images :</h3>
+    <div class="logo2">
+      <img src="Illustrator Logo.png" alt="Logo Illustrator">
+      <img src="Logo ps.png" alt="Logo Photoshop">
+      <img src="in design.png" alt="Logo InDesign">
+      <img src="Figma.png" alt="Logo Figma">
+    </div>
+  </div>
+
+  <div class="Dev" id="audiovisuel">
+    <h1 class="sub-title">Audiovisuel</h1>
+    <i class='bx bxs-music'></i>
+
+    <h3 class="skills-title">Logos / Images :</h3>
+    <div class="logo2">
+      <img src="pp.png" alt="Logo Premiere Pro">
+      <img src="after effect.png" alt="Logo After Effects">
+    </div>
+
+    <div class="logo2">
+      <img src="musescore.png" alt="Logo Musescore">
+      <img src="canva.svg" alt="Logo Canva">
+    </div>
+
+    <div class="logo2">
+      <img src="audition.png" alt="Logo Audition">
+    </div>
+  </div>
+
+</div>
+
+    <script>
+        function changeAnimation(type) {
+            const text = document.getElementById('scrollingText');
+          
+        
+        }
+
+       
+
+        
+    </script>
+</body>
+</html>
