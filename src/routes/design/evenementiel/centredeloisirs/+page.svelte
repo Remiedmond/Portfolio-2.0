@@ -5,7 +5,7 @@ import deco1img from '../../../../img/design/Décoration Partie 1.png';
 import deco2img from '../../../../img/design/Décoration Accueil de loisirs.png'; 
 
 import '../.././design.css';
-
+import { base } from '$app/paths';
 
 const images = [
   {
@@ -38,7 +38,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/evenementiel'>Retour</a> 
+      <a class='cartedumonderetour' href='{base}/design/evenementiel'>Retour</a>
     
 
     <div class="gallery-container">

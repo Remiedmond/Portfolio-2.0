@@ -6,6 +6,7 @@ import depliant2img from '../../../../img/design/Musiqua/dépliant2.png';
 import depliantdehorsimg from '../../../../img/design/Musiqua/dépliant test.png';
 
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 
@@ -44,7 +45,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/musique'>Retour</a> 
+      <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a>
     
 
     <div class="gallery-container">

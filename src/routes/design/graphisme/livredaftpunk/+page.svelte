@@ -6,6 +6,7 @@ import LivreDaftpunkexterieur from '../../../../img/design/livreestetdaftpunkcou
 import LivreDaftpunkmp from '../../../../img/design/livreestetdaftpunkmarquepage.png';
 
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -45,7 +46,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/graphisme'>Retour</a> 
+    <a class='cartedumonderetour' href='{base}/design/graphisme'>Retour</a>
     
 
     <div class="gallery-container">

@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths'; // AJOUTEZ CETTE LIGNE
     import p404 from '../img/erreur404remi.png';
 
 	// Récupère les informations d'erreur
@@ -8,7 +9,7 @@
 	$: message = $page.error?.message || 'Une erreur est survenue';
 
 	function goHome() {
-		goto('/');
+		goto(`${base}/`); // MODIFIEZ CETTE LIGNE
 	}
 </script>
 
@@ -66,10 +67,6 @@
         padding: 1rem;
 	}
 
-    
-	
-
-   
     .inerieur404{
         display: flex;
         flex-direction: row;
@@ -79,20 +76,17 @@
         align-content: flex-start;
     }
     .inerieur404 img{
-        
         width: 35%;
     }
 
     .interieur404para h3{
         font-size: 4rem;
         margin-bottom: -1px;
-        
     }
 
     .interieur404para p{
         font-size: 1.2rem;
     }
-
 
     .interieur404para{
         display: flex;
@@ -103,7 +97,6 @@
         align-content: center;
         width: 40%;
     }
-	
 
 	.btn-primary, .btn-secondary {
 		padding: 1rem 2rem;

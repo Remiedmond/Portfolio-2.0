@@ -3,9 +3,8 @@ import bannière from '../../../../img/Bannière.png';
 import cartedumonde from '../../../../img/carte-du-monde.png';
 import bbqafficheimg from '../../../../img/design/Musiqua/Affiche Barbecue AEMA.png';
 import bbqaffichedehorsimg from '../../../../img/design/Musiqua/Affiche Barbecue AEMA dehors.png';
-
-
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -38,7 +37,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/musique'>Retour</a> 
+      <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a> 
     
 
     <div class="gallery-container">

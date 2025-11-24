@@ -1,4 +1,5 @@
 <script>
+import { base } from '$app/paths'; // AJOUTEZ CETTE LIGNE
 import bannière from '../../../img/Bannière.png';
 import cartedumonde from '../../../img/carte-du-monde.png';
 import Jeuxolympiquesgoalball from '../../../img/design/jeuxolympiquegoalball.jpg';
@@ -14,9 +15,6 @@ import REmiportrzait from '../../../img/design/edmondremi.png';
 import REmiportrzaitdheors from '../../../img/design/portraitremi.png';
 
 import '.././design.css';
-
-
-
 </script>
 
 <div class="designglobal">
@@ -24,22 +22,22 @@ import '.././design.css';
 
     <div class="couleurbackroung">
       <div class="designcartemonde2">
-        <a class='cartedumonderetour' href='/design'>Retour</a>
+        <a class='cartedumonderetour' href='{base}/design'>Retour</a>
 
         <div class="cartedumondeflexwithg">
-            <a class="cartedumondemusiqua" href="/design/evenementiel/miroir">
+            <a class="cartedumondemusiqua" href="{base}/design/evenementiel/miroir">
               <img class="cartedumondestcecile" src={miroirdehors} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/evenementiel/jeux olympique">
+            <a class="cartedumondemusiqua" href="{base}/design/evenementiel/jeux olympique">
               <img class="cartedumondeamicale" src={Jeuxolympiquesgoalball} />
             </a>
-             <a class="cartedumondemusiqua" href="/design/evenementiel/centredeloisirs">
+             <a class="cartedumondemusiqua" href="{base}/design/evenementiel/centredeloisirs">
               <img class="cartedumondebanniere" src={deco2img} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/evenementiel/mystere">
+            <a class="cartedumondemusiqua" href="{base}/design/evenementiel/mystere">
               <img class="cartedumondebanniere" src={ùysterealiutimg} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/evenementiel/portrait">
+            <a class="cartedumondemusiqua" href="{base}/design/evenementiel/portrait">
               <img class="cartedumondebanniere" src={REmiportrzaitdheors} />
             </a>
         </div>

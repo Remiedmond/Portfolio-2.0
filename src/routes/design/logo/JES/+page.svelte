@@ -5,6 +5,7 @@ import LogoJES from '../../../../img/design/Logo Design 1.png';
 import LogoJESdehors from '../../../../img/design/Logo Design 1 bus.png';
 
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -38,7 +39,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/logo'>Retour</a> 
+    <a class='cartedumonderetour' href='{base}/design/logo'>Retour</a>
     
 
     <div class="gallery-container">

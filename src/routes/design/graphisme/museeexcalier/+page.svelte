@@ -5,6 +5,7 @@ import Museeexcalier from '../../../../img/design/EDMOND_Rémi_Fondécran_MDE.jp
 import Museeexcalierfd from '../../../../img/design/EDMOND_Rémi_CarteVisiteRecto_MDE.jpg';
 
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -38,7 +39,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/graphisme'>Retour</a> 
+    <a class='cartedumonderetour' href='{base}/design/graphisme'>Retour</a> 
     
 
     <div class="gallery-container">

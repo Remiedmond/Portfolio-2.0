@@ -5,6 +5,7 @@ import REmiportrzait from '../../../../img/design/edmondremi.png';
 import REmiportrzaitdheors from '../../../../img/design/portraitremi.png';
 import REmiportrzaitirl from '../../../../img/design/moi.jpg';
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -44,7 +45,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/evenementiel'>Retour</a> 
+     <a class='cartedumonderetour' href='{base}/design/evenementiel'>Retour</a> 
     
 
     <div class="gallery-container">

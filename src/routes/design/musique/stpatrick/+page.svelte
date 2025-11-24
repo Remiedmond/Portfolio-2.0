@@ -5,6 +5,7 @@ import cartedumonde from '../../../../img/carte-du-monde.png';
 import stpatrickdehorsimg from '../../../../img/design/Musiqua/Affiche-de-Saint-Patrick dehors.png';
 import stpatrickafficheimg from '../../../../img/design/Musiqua/Affiche-de-Saint-Patrick-7emeversion.jpg';
 import '../.././design.css';
+import { base } from '$app/paths';
 
 const images = [
   {
@@ -32,7 +33,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/musique'>Retour</a> 
+      <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a>
     
 
     <div class="gallery-container">

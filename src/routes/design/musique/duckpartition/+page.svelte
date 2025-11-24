@@ -5,6 +5,7 @@ import ducklogo from '../../../../img/duckescape.png';
 import duckpartoche from '../../../../img/design/Musiqua/Musique jeux Duck escape-Trombone_page-0001.jpg';
 
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 
@@ -37,7 +38,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/musique'>Retour</a> 
+      <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a>
     
 
     <div class="gallery-container">

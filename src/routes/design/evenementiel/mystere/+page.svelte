@@ -4,7 +4,7 @@ import cartedumonde from '../../../../img/carte-du-monde.png';
 import mystereiut from '../../../../img/design/EDMOND_Rémi.jpg';
 import ùysterealiutimg from '../../../../img/design/mystereàliut.png';
 import '../.././design.css';
-
+import { base } from '$app/paths';  
 
 const images = [
   {
@@ -37,7 +37,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/evenementiel'>Retour</a> 
+    <a class='cartedumonderetour' href='{base}/design/evenementiel'>Retour</a> 
     
 
     <div class="gallery-container">

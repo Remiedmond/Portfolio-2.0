@@ -7,6 +7,7 @@ import LivreJackexterieur from '../../../../img/design/EDMOND_Rémi_kerouac_suje
 import LivreJackmarquepage from '../../../../img/design/EDMOND_Rémi_kerouac_sujet_1_c.jpg';
 import LivreJackinterieurmp from '../../../../img/design/Livreestetmarquepage.png';
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -58,7 +59,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/graphisme'>Retour</a> 
+    <a class='cartedumonderetour' href='{base}/design/graphisme'>Retour</a>
     
 
     <div class="gallery-container">

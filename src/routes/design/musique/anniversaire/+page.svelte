@@ -3,8 +3,8 @@ import bannière from '../../../../img/Bannière.png';
 import cartedumonde from '../../../../img/carte-du-monde.png';
 import badgeimg from '../../../../img/design/Musiqua/40 ans.png';
 import badgestcecimg from '../../../../img/design/Musiqua/40 ans img.png';
-
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -38,7 +38,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/musique'>Retour</a> 
+      <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a>
     
 
     <div class="gallery-container">

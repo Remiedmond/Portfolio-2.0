@@ -5,6 +5,7 @@ import miroir1 from '../../../../img/design/miroir1.jpeg';
 import miroir2 from '../../../../img/design/miroir2.jpg';
 import miroirdehors from '../../../../img/design/Miroir dehors.png';
 import '../.././design.css';
+import { base } from '$app/paths';
 
 
 const images = [
@@ -44,7 +45,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/evenementiel'>Retour</a> 
+     <a class='cartedumonderetour' href='{base}/design/evenementiel'>Retour</a> 
     
 
     <div class="gallery-container">

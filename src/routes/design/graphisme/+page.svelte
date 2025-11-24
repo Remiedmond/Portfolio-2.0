@@ -1,4 +1,5 @@
 <script>
+import { base } from '$app/paths'; // AJOUTEZ CETTE LIGNE
 import bannière from '../../../img/Bannière.png';
 import cartedumonde from '../../../img/carte-du-monde.png';
 import LivreJackk from '../../../img/design/Livreestet.png';
@@ -11,9 +12,6 @@ import LivreDaftpunkmp from '../../../img/design/livreestetdaftpunkmarquepage.pn
 import LivreJackinterieurmp from '../../../img/design/Livreestetmarquepage.png';
 import Museeexcalier from '../../../img/design/EDMOND_Rémi_Fondécran_MDE.jpg';
 import '.././design.css';
-
-
-
 </script>
 
 <div class="designglobal">
@@ -21,16 +19,16 @@ import '.././design.css';
 
     <div class="couleurbackroung">
       <div class="designcartemonde2">
-        <a class='cartedumonderetour' href='/design'>Retour</a>
+        <a class='cartedumonderetour' href='{base}/design'>Retour</a>
 
         <div class="cartedumondeflexwithg">
-            <a class="cartedumondemusiqua" href="/design/graphisme/livrejackkerouel">
+            <a class="cartedumondemusiqua" href="{base}/design/graphisme/livrejackkerouel">
               <img class="cartedumondestcecile" src={LivreJackk} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/graphisme/museeexcalier">
+            <a class="cartedumondemusiqua" href="{base}/design/graphisme/museeexcalier">
               <img class="cartedumondeamicale" src={Museeexcalier} />
             </a>
-             <a class="cartedumondemusiqua" href="/design/graphisme/livredaftpunk">
+             <a class="cartedumondemusiqua" href="{base}/design/graphisme/livredaftpunk">
               <img class="cartedumondebanniere" src={LivreDaftpunk} />
             </a>
         </div>

@@ -18,7 +18,7 @@ import stpatrickdehorsimg from '../../../img/design/Musiqua/Affiche-de-Saint-Pat
 import stpatrickafficheimg from '../../../img/design/Musiqua/Affiche-de-Saint-Patrick-7emeversion.jpg';
 import ducklogo from '../../../img/duckescape.png';
 import '.././design.css';
-
+import { base } from '$app/paths';
 
 
 </script>
@@ -28,31 +28,31 @@ import '.././design.css';
 
     <div class="couleurbackroung">
       <div class="designcartemonde2">
-        <a class='cartedumonderetour' href='/design'>Retour</a>
+        <a class='cartedumonderetour' href='{base}/design'>Retour</a>
 
         <div class="cartedumondeflexwithg">
-            <a class="cartedumondemusiqua" href="/design/musique/stcecile">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/stcecile">
               <img class="cartedumondestcecile" src={stceciledehors} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/banniere">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/banniere">
               <img class="cartedumondebanniere" src={bannieredehors} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/carte">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/amicale">
               <img class="cartedumondeamicale" src={amicalecarteimg} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/anniversaire">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/badge">
               <img class="cartedumondeaniversaire" src={badgestcecimg} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/stpatrick">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/saintpatrick">
               <img class="cartedumondestpatrick" src={stpatrickdehorsimg} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/barbecue">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/barbecue">
               <img class="cartedumondebarbecue" src={bbqaffichedehorsimg} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/depliant">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/depliant">
               <img class="cartedumondedepliant" src={depliantdehorsimg} />
             </a>
-            <a class="cartedumondemusiqua" href="/design/musique/duckpartition">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/duckescape">
               <img class="cartedumondedepliant" src={ducklogo} />
             </a>
         </div>

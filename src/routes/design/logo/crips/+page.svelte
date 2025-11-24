@@ -5,7 +5,7 @@ import Logocrips from '../../../../img/design/Logo Design 2.png';
 import Logocripsdehors from '../../../../img/design/Logo Design 2 metro.png';
 
 import '../.././design.css';
-
+import { base } from '$app/paths';
 
 const images = [
   {
@@ -38,7 +38,7 @@ function selectImage(image) {
   <img class="bannière" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='/design/logo'>Retour</a> 
+     <a class='cartedumonderetour' href='{base}/design/graphisme'>Retour</a> 
     
 
     <div class="gallery-container">
