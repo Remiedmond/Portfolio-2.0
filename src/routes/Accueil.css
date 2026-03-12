@@ -7,6 +7,7 @@
 
 .imageaccueil{
     width:100%;
+    margin-bottom: -1rem;
 }
 
 .notesfond{
@@ -24,9 +25,7 @@
     background: linear-gradient(90deg, #004aad, #1b1a1a);
     color: white;
     font-family: 'League Spartan', sans-serif;
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(20px);
+    line-height: 1.6;;
     transition: all 0.8s ease;
   }
 
@@ -34,14 +33,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-  .section-title {
-  font-size: 50px;
-  font-family: 'League Spartan', sans-serif;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 1rem;
-  padding-top: 5rem;
-}
+  
 
     .qui2 {
       display: flex;
@@ -55,36 +47,64 @@
 
     .quisuisje {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
+      align-items: left;
+      text-align: left;
       font-size: 1.5rem;
       line-height: 1.8;
       padding: 4rem;
       color: #f8f9fa;
       border-radius: 1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin: 2rem auto;
+      padding-left: 8rem;
       max-width: 800px;
 
     }
+
+    .quisuisje h1 {
+      font-size: 7rem;
+      color: #fd3030;
+      filter: drop-shadow(0 2px 10px #000000);
+      margin-bottom: -2rem;
+    }
+
+    .quisuisje h3 {
+      font-size: 3rem;
+      color: #fd3030;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 2px 10px #000000);
+    }
+
     .container10 {
       height: 100%;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 auto;
+      margin-right: 8rem;
       margin-top: 2rem;
     }
 
     .border {
-      height: 369px;
-      width: 290px;
+      height: 95%;
+      width: 95%;
       background: transparent;
       border-radius: 10px;
       transition: border 1s;
       position: relative;
+      
+    }
+    .border h2 {
+      font-size: xx-large;background: linear-gradient(to right, #e63931, #4a76b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-left: 20px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 1s;
     }
 
     .border:hover {
@@ -92,8 +112,8 @@
     }
 
     .card {
-      height: 379px;
-      width: 300px;
+      height: 500px;
+      width: 400px;
       background: grey;
       border-radius: 10px;
       transition: background 0.8s;
@@ -108,25 +128,19 @@
 
     .card0 {
       background-image: url("../img/trombone.jpg");
-      background-size: 300px;
+      background-size: 400px;
       background-position: center center;
       background-repeat: no-repeat;
     }
 
     .card0:hover {
       background-image: url("../img/trombone.jpg");
-      background-size: 600px;
+      background-size: 580px;
       background-position: left center;
       background-repeat: no-repeat;
     }
 
-    h2 {
-      font-family: 'akaPosse', sans-serif;
-      color: #fd3030;
-      margin: 20px;
-      opacity: 0;
-      transition: opacity 1s;
-    }
+    
 
     .card0:hover h2 {
       opacity: 1;
@@ -143,9 +157,10 @@
 
     .iconsss {
       position: absolute;
-      fill: #fff;
+      fill: #e63931;
       height: 130px;
-      top: 226px;
+      top: 280px;
+      left: 000px;
       width: 50px;
       display: flex;
       flex-direction: column;
@@ -154,11 +169,24 @@
     }
 
     .iconsss .bx {
-      color: #fff;
+      color: #e63931;
+      background: rgba(224, 0, 0, 0.2);
+      padding: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      font-size: 28px;
+      transition: background 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    }
+    
+    .iconsss .bx:hover {
+      color: #fd3030;
+      background: rgba(0, 0, 0, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.0);
+      filter: drop-shadow(0 0 10px #e63931);
     }
 
-
-    
+   
      
 /* Media query pour les tablettes (600px et plus) */
 @media screen and (max-width: 1024px) {
@@ -172,6 +200,13 @@
     max-width: 90%;
     margin: 1rem auto;
     
+  }
+
+  .quisuisje h1 {
+    font-size: 5rem;
+  }
+  .quisuisje h3 {
+    font-size: 2rem;
   }
  
   .container10 {
@@ -208,15 +243,34 @@
     margin-bottom: -1rem;
   }
 
+  .quisuisje h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+  }
+
+  .quisuisje h3 {
+    font-size: 1.5rem;
+  }
+
   .container10 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 2rem;
   }
 
   .border {
-    width: 200px;
-    height: 250px;
+    width: 95%;
+    height: 95%;
+  }
+
+  .border h2 {
+    font-size: large;
+    margin-left: 40px;
+    margin-top: 200px;
+    color: #e63931;
+    background-color: none;
   }
 
   .card {
@@ -224,32 +278,27 @@
     height: 250px;
   }
 
+  .card0 {
+    background-size: 200px;
+  }
+
+  .card0:hover {
+    background-size: 300px;
+    background-position: left center;
+  }
+  
   .iconsss {
-    top: 180px;
-    height: 80px;
+    top: 100px;
+    height: 10px;
+  }
+  .iconsss .bx {
+    font-size: 0px;
   }
 
 
 }
 
-        .competences-container {
-            width: 100%;
-            background: linear-gradient(270deg, #1b1a1a, #004aad);
-            border-top: 4px solid white;
-            border-bottom: 4px solid white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .scrolling-text {
-            font-size: 80px;
-            font-weight: bold;
-            color: white;
-            white-space: nowrap;
-            animation: scrollRight 8s linear infinite;
-            padding: 20px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
+     
 
         /* Animation de défilement de droite à gauche */
         @keyframes scrollRight {

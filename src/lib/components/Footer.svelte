@@ -38,7 +38,7 @@ import pSvelte2 from '../../img/Sveltelogo2.png';
     <div class="footer-main">
       <div class="footer-brand">
         <h3>Mon Portfolio</h3>
-        <p>Développeur passionné créant des expériences web</p>
+        <p>Développeur web</p>
       </div>
                     
         <div class="footer-section">
@@ -46,7 +46,7 @@ import pSvelte2 from '../../img/Sveltelogo2.png';
           <div class="contact-info">
             <p>remi.edmond6230@gmail.com</p>
             <p>07 69 34 56 81</p>
-            <p>31 Avenue Emile Duquesnoy 62217 Achicourt, France</p>
+            <p>Achicourt, France</p>
         </div>      
       </div>
     </div>

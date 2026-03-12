@@ -27,6 +27,8 @@ import pAnglais from '../../img/anglais.png';
 import pEspagne from '../../img/espagne.png';
 import CVRE from '../../img/CV Rémi EDMOND.pdf';
 
+import Propos from '$lib/propos.svelte';
+
 import './profil.css';
 
 onMount(() => {
@@ -357,11 +359,7 @@ onMount(() => {
       <div class="cursor cursor2"></div>
       <section class="moi">
 
-         <div class="titrecv-container">
-            <div class="titrecv-text" id="titrecvText">
-                À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! | À propos de moi ! |
-            </div>
-    </div>
+        <Propos />
         <p class="description">
           Je m'appelle Rémi EDMOND, j'ai 20 ans et je suis actuellement étudiant en BUT Métiers du Multimédia et de l'Internet à l'IUT de Lens.  
           Comme vous pouvez le voir sur les photos ci-dessus, je suis passionné de sport et de musique.  
