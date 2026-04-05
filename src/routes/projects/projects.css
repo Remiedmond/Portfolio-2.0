@@ -5,9 +5,13 @@
 .containerprojects {
     background: linear-gradient(90deg, #004aad, #1b1a1a);
     font-family: 'League Spartan', sans-serif;
-    margin: 0 auto;
+}
+   
+.autreweb{
+     margin: 0 auto;
     margin-top: -1em;
     padding: 4rem;
+
 }
 
 .titreweb {

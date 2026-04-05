@@ -51,8 +51,10 @@
     font-size: clamp(40px, 8vw, 80px);
   }
 
+  
   .animate-marquee span {
     padding-right: 0.2em; 
+    color: #d8a43a;
   }
 
   @keyframes marquee {

@@ -1,5 +1,4 @@
 <script>
-  import Projetsnow from "./projetsnow.svelte";
   import './descweb.css';
   
   import snowpro from '../../img/snowrideprojet.png';
@@ -10,49 +9,48 @@
     pagea = component;
   }
 </script>
-
-<div class="containerwzb">
-
-    <div class="partiegaucheweb">
-    <img src={snowpro} >
-        <a class=" {pagea === 'Projetsnow' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Projetsnow')}>
-              En savoir +
-        </a>
+<div class="project-container">
+    <!-- En-tête : Numéro et Titre stylisé -->
+    <div class="project-header">
+        <span class="big-num">01</span>
+        <div class="title-block">
+            <h2 class="project-name">Maquette <span class="highlight">SNOWRIDE</span></h2>
+            <p class="project-subtitle">BUT MMI — 1ère Année</p>
+        </div>
     </div>
 
-  <div class="">
-    {#if pagea === 'Projetsnow'}
-      <Projetsnow />
-     {:else}
-      <div class="accueil">
-        <h1 class="text-center">Maquette SNOWRIDE</h1>
-        <p class="textenter">Voici une maquette faite en première année de BUT MMI.</p>
-        <div class="description2">
-        <p>
-            Ce projet présente une maquette de site e-commerce spécialisé dans l’univers du snowboard et des sports d’hiver. 
-            L’objectif est de mettre en avant la nouvelle collection à travers un design moderne et immersif.
-        </p>
-
-        <p>
-            La page d’accueil se compose d’une grande image de montagne avec un slogan impactant 
-            <em>« in the game since 92 »</em>, accompagnée d’un menu clair permettant d’accéder aux différentes catégories : 
-            planches, fixations, chaussures, masques, accessoires, protections et sécurité.
-        </p>
-
-        <p>
-            On retrouve ensuite plusieurs visuels mettant en avant des sportifs en action, ainsi qu’une sélection de produits récents 
-            (skis, vestes, casques, gants, etc.) affichés avec leur prix. L’expérience utilisateur est renforcée par la possibilité de 
-            voir tous les produits, de s’abonner à la newsletter et de profiter des avantages fidélité.
-        </p>
+    <div class="project-content">
+        <!-- Partie Visuelle -->
+        <div class="visual-side">
+            <div class="img-frame">
+                <img src={snowpro} alt="Projet Snowride">
+            </div>
+            <a href="https://html-snowride.vercel.app/" target="_blank" class="btn-editorial">
+                Voir le projet <i class='bx bx-right-arrow-alt'></i>
+            </a>
         </div>
-         <div class="description2">
-                    <p>
-                        <strong>Crédits :</strong>  Rémi <i>EDMOND </i>     
-                    </p>
-                </div>
-      </div>
-     
-      
-    {/if}
-  </div>
+
+        <!-- Partie Texte -->
+        <div class="info-side">
+            <div class="specs">
+                <div class="spec-item"><span> CREDITS</span> Rémi EDMOND</div>
+                <div class="spec-item"><span>TYPE</span> E-Commerce</div>
+                <div class="spec-item"><span>STACK</span> UI / UX Design</div>
+            </div>
+
+            <div class="text-description">
+                <p>
+                    Ce projet présente une maquette de site e-commerce spécialisé dans l’univers du snowboard. 
+                    L’objectif est de mettre en avant la nouvelle collection à travers un design moderne.
+                </p>
+                <p>
+                    Le design mise sur une immersion totale avec des visuels de montagne et une hiérarchie 
+                    claire des catégories : planches, fixations et accessoires.
+                </p>
+                <p>
+                  
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

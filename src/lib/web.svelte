@@ -1,5 +1,5 @@
 <script>
-  const text = "À propos de moi ! | ";
+  const text = "MES Projets WEB | ";
   const repeatedText = new Array(20).fill(text).join("");
   let isPaused = false;
 </script>

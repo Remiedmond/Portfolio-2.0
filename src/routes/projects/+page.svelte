@@ -11,6 +11,9 @@ import Instaphpimg from '../../img/instagramprojet.png';
 import Bddimg from '../../img/series.png';
 import Duckescapeimg from '../../img/duckescape.png';
 import './projects.css';
+import Reveal from '$lib/reveal.svelte';
+import Propos from '$lib/propos.svelte';
+import Web from '$lib/web.svelte';
 
   let pagea = ''; 
 
@@ -36,8 +39,16 @@ import './projects.css';
 
   <img class="bannière" src={bannière}>
 
+    
 
 <div class="containerprojects"> 
+  <div class="reveal-container">
+    
+  <Web />  
+  </div>
+
+<div class="autreweb">
+  
   <div class="titreweb">
     <h1> Web développement & design  </h1> 
   </div>
@@ -131,4 +142,6 @@ import './projects.css';
 {/if}
 
   </div>
+  </div>
 </div>
+

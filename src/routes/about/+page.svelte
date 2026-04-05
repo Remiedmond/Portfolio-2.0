@@ -31,258 +31,79 @@ import Propos from '$lib/propos.svelte';
 
 import './profil.css';
 
-onMount(() => {
-  
-  // Menu button functionality
-  const menuButton = document.querySelector('.menu-button');
-  if (menuButton) {
-    menuButton.addEventListener('click', function () {
-      this.classList.toggle('active');
-    });
-  }
 
-  // Button animation functionality
-  document.querySelectorAll('.button').forEach(button => {
-    let duration = 3000,
-      svg = button.querySelector('svg'),
-      svgPath = new Proxy({
-        y: null,
-        smoothing: null
-      }, {
-        set(target, key, value) {
-          target[key] = value;
-          if (target.y !== null && target.smoothing !== null) {
-            svg.innerHTML = getPath(target.y, target.smoothing, null);
-          }
-          return true;
-        },
-        get(target, key) {
-          return target[key];
-        }
-      });
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-    button.style.setProperty('--duration', duration);
-    svgPath.y = 20;
-    svgPath.smoothing = 0;
+  onMount(() => {
+  gsap.registerPlugin(ScrollTrigger);
 
-    button.addEventListener('click', e => {
-      e.preventDefault();
-
-      if (!button.classList.contains('loading')) {
-        button.classList.add('loading');
-
-        // Vérifier si GSAP est disponible
-        if (typeof gsap !== 'undefined') {
-          gsap.to(svgPath, {
-            smoothing: .3,
-            duration: duration * .065 / 1000
-          });
-
-          gsap.to(svgPath, {
-            y: 12,
-            duration: duration * .265 / 1000,
-            delay: duration * .065 / 1000,
-            ease: Elastic.easeOut.config(1.12, .4)
-          });
-        }
-
-        setTimeout(() => {
-          svg.innerHTML = getPath(0, 0, [
-            [3, 14],
-            [8, 19],
-            [21, 6]
-          ]);
-        }, duration / 2);
-      }
-    });
-  });
-
-  // Path generation functions
-  function getPoint(point, i, a, smoothing) {
-    let cp = (current, previous, next, reverse) => {
-      let p = previous || current,
-        n = next || current,
-        o = {
-          length: Math.sqrt(Math.pow(n[0] - p[0], 2) + Math.pow(n[1] - p[1], 2)),
-          angle: Math.atan2(n[1] - p[1], n[0] - p[0])
-        },
-        angle = o.angle + (reverse ? Math.PI : 0),
-        length = o.length * smoothing;
-      return [current[0] + Math.cos(angle) * length, current[1] + Math.sin(angle) * length];
-    },
-      cps = cp(a[i - 1], a[i - 2], point, false),
-      cpe = cp(point, a[i - 1], a[i + 1], true);
-    return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
-  }
-
-  function getPath(update, smoothing, pointsNew) {
-    let points = pointsNew ? pointsNew : [
-      [4, 12],
-      [12, update],
-      [20, 12]
-    ],
-      d = points.reduce((acc, point, i, a) => i === 0 ? `M ${point[0]},${point[1]}` : `${acc} ${getPoint(point, i, a, smoothing)}`, '');
-    return `<path d="${d}" />`;
-  }
-
-  // Scroll to top functionality
-  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-  if (scrollToTopBtn) {
-    const handleScroll = () => {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollToTopBtn.classList.remove('hidden');
-      } else {
-        scrollToTopBtn.classList.add('hidden');
-      }
+  const timer = setTimeout(() => {
+    // Configuration commune pour l'effet aller-retour
+    const scrollSettings = {
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse" // L'effet magique est ici
     };
 
-    window.addEventListener('scroll', handleScroll);
-
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 1. FORMATIONS
+    gsap.to(".Formations .NIVEAU", {
+      scrollTrigger: {
+        trigger: ".Formations",
+        ...scrollSettings
+      },
+      opacity: 1,
+      visibility: "visible",
+      y: 0,
+      stagger: 0.2,
+      duration: 0.8
     });
 
-    // Cleanup function
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }
-
-  /*--------------------
-  Carousel functionality
-  --------------------*/
-  
-  /*--------------------
-  Vars
-  --------------------*/
-  let progress = 50;
-  let startX = 0;
-  let active = 0;
-  let isDown = false;
-
-  /*--------------------
-  Constants
-  --------------------*/
-  const speedWheel = 0.02;
-  const speedDrag = -0.1;
-
-  /*--------------------
-  Get Z Index
-  --------------------*/
-  const getZindex = (array, index) => (
-    array.map((_, i) => (index === i) ? array.length : array.length - Math.abs(index - i))
-  );
-
-  /*--------------------
-  Items
-  --------------------*/
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  const cursors = document.querySelectorAll('.cursor');
-
-  const displayItems = (item, index, active) => {
-    const zIndex = getZindex([...carouselItems], active)[index];
-    item.style.setProperty('--zIndex', zIndex);
-    item.style.setProperty('--active', (index - active) / carouselItems.length);
-  };
-
-  /*--------------------
-  Animate
-  --------------------*/
-  const animate = () => {
-    progress = Math.max(0, Math.min(progress, 100));
-    active = Math.floor(progress / 100 * (carouselItems.length - 1));
-    carouselItems.forEach((item, index) => displayItems(item, index, active));
-  };
-
-  // Initialize animation
-  if (carouselItems.length > 0) {
-    animate();
-  }
-
-  /*--------------------
-  Click on Items
-  --------------------*/
-  carouselItems.forEach((item, i) => {
-    item.addEventListener('click', () => {
-      progress = (i / carouselItems.length) * 100 + 10;
-      animate();
+    // 2. EXPÉRIENCES
+    gsap.to(".sncf, .colo", {
+      scrollTrigger: {
+        trigger: ".exper", // On utilise la div parente .exper
+        ...scrollSettings
+      },
+      opacity: 1,
+      visibility: "visible",
+      y: 0,
+      stagger: 0.3,
+      duration: 1
     });
-  });
 
-  /*--------------------
-  Event Handlers
-  --------------------*/
-  const handleWheel = (e) => {
-    const wheelProgress = e.deltaY * speedWheel;
-    progress = progress + wheelProgress;
-    animate();
-  };
+    // 3. ACTIVITÉS
+    gsap.to(".handphoto, .velo, .tennis, .trombone, .aema", {
+      scrollTrigger: {
+        trigger: ".mesactis",
+        ...scrollSettings
+      },
+      opacity: 1,
+      visibility: "visible",
+      y: 0,
+      stagger: 0.1,
+      duration: 0.6
+    });
 
-  const handleMouseMove = (e) => {
-    if (e.type === 'mousemove') {
-      cursors.forEach((cursor) => {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      });
-    }
-    if (!isDown) return;
-    const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-    const mouseProgress = (x - startX) * speedDrag;
-    progress = progress + mouseProgress;
-    startX = x;
-    animate();
-  };
+    // 4. LANGUES (Ajoutées ici)
+    gsap.to(".langues .NIVEAU", {
+      scrollTrigger: {
+        trigger: ".langues",
+        ...scrollSettings
+      },
+      opacity: 1,
+      visibility: "visible",
+      y: 0,
+      stagger: 0.2,
+      duration: 0.8
+    });
 
-  const handleMouseDown = (e) => {
-    isDown = true;
-    startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-  };
+    ScrollTrigger.refresh();
+  }, 100);
 
-  const handleMouseUp = () => {
-    isDown = false;
-  };
-
-  /*--------------------
-  Video Toggle Function
-  --------------------*/
-  window.togglePlay = function() {
-    const video = document.getElementById('videoPlayer');
-    const playButton = document.getElementById('playButton');
-
-    if (video && video.style.display === 'none') {
-      video.style.display = 'block';
-      if (playButton) playButton.style.display = 'none';
-      video.src += "?autoplay=1";
-    }
-  };
-
-  /*--------------------
-  Event Listeners
-  --------------------*/
-  const wheelHandler = (e) => handleWheel(e);
-  const mouseDownHandler = (e) => handleMouseDown(e);
-  const mouseMoveHandler = (e) => handleMouseMove(e);
-  const mouseUpHandler = () => handleMouseUp();
-  const touchStartHandler = (e) => handleMouseDown(e);
-  const touchMoveHandler = (e) => handleMouseMove(e);
-  const touchEndHandler = () => handleMouseUp();
-
-  document.addEventListener('wheel', wheelHandler);
-  document.addEventListener('mousedown', mouseDownHandler);
-  document.addEventListener('mousemove', mouseMoveHandler);
-  document.addEventListener('mouseup', mouseUpHandler);
-  document.addEventListener('touchstart', touchStartHandler);
-  document.addEventListener('touchmove', touchMoveHandler);
-  document.addEventListener('touchend', touchEndHandler);
-
-  // Cleanup function pour éviter les fuites mémoire
   return () => {
-    document.removeEventListener('wheel', wheelHandler);
-    document.removeEventListener('mousedown', mouseDownHandler);
-    document.removeEventListener('mousemove', mouseMoveHandler);
-    document.removeEventListener('mouseup', mouseUpHandler);
-    document.removeEventListener('touchstart', touchStartHandler);
-    document.removeEventListener('touchmove', touchMoveHandler);
-    document.removeEventListener('touchend', touchEndHandler);
+    clearTimeout(timer);
+    ScrollTrigger.getAll().forEach(t => t.kill());
   };
 });
 
@@ -292,71 +113,8 @@ onMount(() => {
 
 <section class="contentabout">
 
-   <div class="titrecv-container">
-            <div class="titrecv-text" id="titrecvText">
-                MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS | MES PHOTOS |
-            </div>
-    </div>
-  <div class="carousel">
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Un couché de soleil sur la plage </div>
-        <div class="num">01</div>
-        <img src={pRoyan} alt="Royan" />
-      </div>
-    </div>
+   
 
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Victoire de la coupe hand -18 </div>
-        <div class="num">02</div>
-        <img src={pHand} style="object-position: 24% center" alt="Handball coupe -18" />
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Un moment de ski </div>
-        <div class="num">03</div>
-        <img src={pSeef} alt="Ski" />
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">La fête de la musique à Arras </div>
-        <div class="num">04</div>
-        <img src={pHarmonie} alt="Fête de la musique Arras" />
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Mon poste de gardien de handball</div>
-        <div class="num">05</div>
-        <img src={pHanf} alt="Gardien de handball" />
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Après une course</div>
-        <div class="num">06</div>
-        <img src={pCourse} alt="Après une course" />
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="carousel-box">
-        <div class="title">Après un concert lors d'un festival </div>
-        <div class="num">07</div>
-        <img src={pFest} alt="Concert festival" />
-      </div>
-    </div>
-  </div>
-
-      <div class="cursor"></div>
-      <div class="cursor cursor2"></div>
       <section class="moi">
 
         <Propos />
@@ -381,11 +139,11 @@ onMount(() => {
         <div class="Formations">
           <div class="NIVEAU">
             <img src={pMMI} alt="MMI">
-            <p class="sportive">BUT MMI 3ème année</p>
+            <p class="sportive">BUT MMI 2023-2026</p>
           </div>
           <div class="NIVEAU">
             <img src={pBac} alt="Bac">
-            <p class="sportive">Bac général SPC & NSI</p>
+            <p class="sportive">Bac général SPC & NSI 2023</p>
 
 
           </div>
@@ -417,7 +175,7 @@ onMount(() => {
                   <img src={pColo3} alt="Photo Colo 3">
               </a>
               <a href="" id="colo4" style="text-decoration: none;">
-                <p class="sportive"> Animateur en colonie de vacances & centre d'accueil !(2023-2024-2025)  </p>
+                <p class="sportive"> Animateur en colonie de vacances & centre d'accueil ! 2023-2026  </p>
               </a>
             </div>
           </div>
@@ -473,3 +231,23 @@ onMount(() => {
       </section>
 
     </section>
+
+    <style>
+     
+/* Position de départ (cachée) */
+.Formations .NIVEAU, 
+.langues .NIVEAU {
+  opacity: 0;
+  transform: translateY(30px); /* Légèrement vers le bas */
+}
+
+.experiences > div {
+  opacity: 0;
+  transform: translateX(-30px); /* Légèrement vers la gauche */
+}
+
+.sport > div, .musique > div {
+  opacity: 0;
+  transform: scale(0.9); /* Légèrement plus petit */
+}
+    </style>
