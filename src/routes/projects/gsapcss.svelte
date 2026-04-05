@@ -1,53 +1,62 @@
 <script>
   import './descweb.css';
-  
   import gsappro from '../../img/dessin.png';
   
-  let pagea4 = ''; // Variable locale pour ce composant
+  let pagea4 = ''; 
   
   function show(component) {
     pagea4 = component;
   }
 </script>
 
-<div class="containerwzb">
-     <div class="partiegaucheweb">
-     <img src={gsappro} alt="Projet Grid" />
-      <!-- <a href="/css2/index.html">
-  En savoir +
-</a> -->
-    </div>
-
-  <div class="">
+<div class="project-container">
     {#if pagea4 === 'Projetyakapartir'}
-      <Projetyakapartir />
-     {:else}
-      <div class="accueil">
-        <h1 class="text-center">Page GSAP & ScrollReveal</h1>
-        <p class="textenter">Voici une maquette faite en deuxième année de BUT MMI.</p>
-        <div class="description2">
-        <p>
-             Le projet <em>“Les grands moments du sport”</em> a été réalisé au cours de notre deuxième année de BUT Métiers du Multimédia et de l’Internet.  
-             L’objectif était de concevoir un site web interactif et immersif, permettant de revisiter certains événements marquants de l’histoire du sport tout en mettant en avant nos premières compétences en animation et intégration web.
-        </p>
-        <p>
-            Pour la partie visuelle et structurelle, nous avons utilisé <strong>HTML</strong> et <strong>CSS</strong> afin de créer une mise en page claire et responsive.  
-            Afin de rendre le site plus dynamique, nous avons intégré <strong>ScrollReveal</strong> pour les animations d’apparition au défilement, et <strong>GSAP</strong> pour mettre en place des animations plus complexes, notamment sur la section de natation avec la course des nageurs.
-        </p>
-        <p>
-            Ce projet nous a permis d’explorer pour la première fois l’univers des bibliothèques d’animations JavaScript et d’apprendre à combiner des outils comme ScrollReveal et GSAP pour améliorer l’interactivité d’un site web.  
-            Au-delà de l’aspect technique, il nous a appris à scénariser une narration visuelle et à concevoir une expérience immersive centrée sur l’utilisateur.  
-        </p>
-        <p>
-            <em>“Les grands moments du sport”</em> a ainsi été une étape importante dans notre apprentissage du web, en nous familiarisant avec l’animation front-end et l’enrichissement de l’expérience utilisateur par le mouvement.
-        </p>
-        <p>
-            <strong>Crédits :</strong> Arthur <i>CARRE</i> / Rémi <i>EDMOND </i> / Louan <i>NECKI</i>     
-        </p>
+        <!-- Gardé au cas où tu aurais un sous-composant plus tard -->
+        <Projetyakapartir />
+        <button class="btn-back" on:click={() => show('')}>
+            <i class='bx bx-left-arrow-alt'></i> Retour
+        </button>
+    {:else}
+        <!-- En-tête : Numéro 04 et Titre -->
+        <div class="project-header">
+            <span class="big-num">04</span>
+            <div class="title-block">
+                <h2 class="project-name">Projet <span class="highlight">ANIMATIONS</span></h2>
+                <p class="project-subtitle">LES GRANDS MOMENTS DU SPORT — BUT MMI 2</p>
+            </div>
         </div>
-      </div>
-     
-      
+
+        <div class="project-content">
+            <!-- Partie Visuelle -->
+            <div class="visual-side">
+                <div class="img-frame">
+                    <img src={gsappro} alt="Projet GSAP Sport">
+                </div>
+                <a href="https://gsap-rho-woad.vercel.app/" target="_blank" class="btn-editorial">
+                    Explorer l'expérience <i class='bx bx-run'></i>
+                </a>
+            </div>
+
+            <!-- Partie Texte -->
+            <div class="info-side">
+                <div class="specs">
+                    <div class="spec-item"><span>TOOLS</span> GSAP & ScrollReveal</div>
+                    <div class="spec-item"><span>FOCUS</span> Interactivité & Motion</div>
+                    <div class="spec-item"><span>CRÉDITS</span> Arthur CARRE / Rémi EDMOND</div>
+                </div>
+
+                <div class="text-description">
+                    <p>
+                        L'enjeu de ce projet était de concevoir un site immersif revisitant l'histoire du sport grâce aux bibliothèques d'animations JavaScript.
+                    </p>
+                    <p>
+                        Nous avons intégré <strong>ScrollReveal</strong> pour les apparitions au défilement et <strong>GSAP</strong> pour des séquences complexes, comme la simulation d'une course de natation interactive.
+                    </p>
+                    <p class="quote">
+                        "Une étape clé dans l'apprentissage du web, mêlant narration visuelle et performance front-end."
+                    </p>
+                </div>
+            </div>
+        </div>
     {/if}
-  </div>
 </div>

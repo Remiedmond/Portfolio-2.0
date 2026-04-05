@@ -29,6 +29,8 @@ import './projects.css';
   import Instaphp from "./instamgram.svelte";
   import BDDprojet from "./bdd.svelte";
   import Duckescape from "./duckescape.svelte";
+  import Frise from "./frise.svelte";
+  import Escape from "./escape.svelte";
 
 
 </script>

@@ -1,54 +1,58 @@
 <script>
   import './descweb.css';
-  
   import bddseriepro from '../../img/bddserie.png';
   
-  let pagea4 = ''; // Variable locale pour ce composant
+  let pagea4 = ''; 
   
   function show(component) {
     pagea4 = component;
   }
 </script>
 
-<div class="containerwzb">
-     <div class="partiegaucheweb">
-     <img src={bddseriepro} alt="Projet en Base de données " />
-       <a href="https://youtu.be/mfv1aijVhvM"   >
-          En savoir +
-        </a>
-    </div>
-
-  <div class="">
+<div class="project-container">
     {#if pagea4 === 'Projetyakapartir'}
-      <Projetyakapartir />
-     {:else}
-      <div class="accueil">
-        <h1 class="text-center">Projet en Base de données MySQL</h1>
-        <p class="textenter">Voici un projet fait en première année de BUT MMI.</p>
-        <div class="description2">
-        <p>
-            Le projet <em>“Séries”</em> a été développé lors de notre première année de BUT Métiers du Multimédia et de l’Internet.  
-            Il s’agissait de concevoir une application web permettant de consulter et gérer une base de données de séries, tout en découvrant pour la première fois l’utilisation d’un système de gestion de base de données avec <strong>MySQL</strong>.
-        </p>
-        <p>
-            L’interface utilisateur a été construite en <strong>HTML/CSS</strong> pour offrir une présentation claire et agréable, tandis que <strong>PHP</strong> assurait la logique applicative et les interactions avec la base de données.  
-            Ce projet constituait une étape importante, car il nous a initiés à la conception, la création et l’exploitation d’une base de données relationnelle.
-        </p>
-         <p>
-            Ce projet nous a permis de comprendre les bases de la modélisation d’une base de données (tables, relations, clés primaires/étrangères), d’apprendre à gérer les requêtes SQL (INSERT, UPDATE, DELETE, SELECT) et de mettre en pratique la communication entre <strong>PHP</strong> et <strong>MySQL</strong>.  
-            C’était une première approche concrète du développement dynamique d’applications web, qui nous a donné des bases solides pour la suite de notre parcours.
-        </p>
-        <p>
-            Bienvenue dans l’univers du projet <em>“Séries”</em> !
-        </p>
-
-        <p>
-            <strong>Crédits :</strong> Rémi <i>EDMOND </i> 
-        </p>
+        <Projetyakapartir />
+        <button class="btn-back" on:click={() => show('')}>
+            <i class='bx bx-left-arrow-alt'></i> Retour
+        </button>
+    {:else}
+        <div class="project-header">
+            <span class="big-num">08</span>
+            <div class="title-block">
+                <h2 class="project-name">Bases de <span class="highlight">DONNÉES</span></h2>
+                <p class="project-subtitle">APPLICATION SÉRIES — BUT MMI 1</p>
+            </div>
         </div>
-      </div>
-     
-      
+
+        <div class="project-content">
+            <div class="visual-side">
+                <div class="img-frame">
+                    <img src={bddseriepro} alt="Projet Base de données Séries">
+                </div>
+                <a href="https://youtu.be/mfv1aijVhvM" target="_blank" class="btn-editorial">
+                    Voir la démo <i class='bx bxl-youtube'></i>
+                </a>
+            </div>
+
+            <div class="info-side">
+                <div class="specs">
+                    <div class="spec-item"><span>SGBD</span> MySQL</div>
+                    <div class="spec-item"><span>LOGIQUE</span> PHP 7.4 / 8</div>
+                    <div class="spec-item"><span>CREDITS</span> Rémi EDMOND</div>
+                </div>
+
+                <div class="text-description">
+                    <p>
+                        Le projet <strong>“Séries”</strong> consistait à concevoir une application web permettant de consulter et gérer un catalogue de contenus via un système de gestion de base de données.
+                    </p>
+                    <p>
+                        Ce travail a permis de poser des bases solides sur la <strong>modélisation SQL</strong> (tables, relations, clés primaires et étrangères) et l'exécution de requêtes complexes pour dynamiser l'interface utilisateur.
+                    </p>
+                    <p class="quote">
+                        "Une première approche concrète du développement dynamique et de l'exploitation de données relationnelles."
+                    </p>
+                </div>
+            </div>
+        </div>
     {/if}
-  </div>
 </div>

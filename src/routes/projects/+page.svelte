@@ -10,6 +10,8 @@ import Laplaylistimg from '../../img/laplaylist.png';
 import Instaphpimg from '../../img/instagramprojet.png';
 import Bddimg from '../../img/series.png';
 import Duckescapeimg from '../../img/duckescape.png';
+import Friseimg from '../../img/frise.png';
+import Escapeimg from '../../img/escape.png';
 import './projects.css';
 import Reveal from '$lib/reveal.svelte';
 import Propos from '$lib/propos.svelte';
@@ -33,6 +35,8 @@ import Web from '$lib/web.svelte';
   import Instaphp from "./instamgram.svelte";
   import BDDprojet from "./bdd.svelte";
   import Duckescape from "./duckescape.svelte";
+  import Frise from "./frise.svelte"
+  import Escape from "./escape.svelte"
 
 
 </script>
@@ -90,6 +94,10 @@ import Web from '$lib/web.svelte';
   <BDDprojet />
 {:else if pagea === 'Duckescape'}
   <Duckescape />
+{:else if pagea === 'Frise'}
+  <Frise />
+{:else if pagea === 'Escape'}
+  <Escape />
 {:else}
  
  <div class="imageweb">
@@ -138,7 +146,17 @@ import Web from '$lib/web.svelte';
       <img src={Duckescapeimg} alt="Image Logo la Playlist festival">
     </a> 
   </div>
+  <div class="image-container">
+    <a class=" {pagea === 'Frise' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Frise')}>
+      <img src={Friseimg} alt="Image Logo la Playlist festival">
+    </a>
 </div> 
+<div class="image-container">
+    <a class=" {pagea === 'Escape' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Escape')}>
+      <img src={Escapeimg} alt="Image Logo la Playlist festival">
+    </a>
+</div>
+</div>
 {/if}
 
   </div>

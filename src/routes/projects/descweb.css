@@ -1,6 +1,6 @@
 .project-container {
     background:none;
-    padding: 4rem 2rem;
+    padding: 1rem 2rem;
     margin: 2rem auto;
     border-radius: 15px;
     color: white;
@@ -113,4 +113,50 @@
     }
     .big-num { font-size: 4rem; }
     .project-name { font-size: 1.8rem; }
+}
+
+/* Style spécifique pour la vidéo Duck Escape */
+.videoduck {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #000;
+}
+
+/* Style pour la section QR Code */
+.qr-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qr-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background: white; /* Pour que le QR code soit bien lisible */
+    padding: 5px;
+}
+
+.qr-text p {
+    margin: 0 !important;
+    font-size: 0.85rem !important;
+}
+
+.qr-text strong {
+    color: #cf2626;
+    font-size: 1rem;
+}
+
+/* On s'assure que le bouton Drive ressort bien */
+.btn-editorial i {
+    vertical-align: middle;
+    margin-left: 8px;
+    font-size: 1.2rem;
 }

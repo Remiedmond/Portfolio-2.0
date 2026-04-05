@@ -1,51 +1,62 @@
 <script>
   import Projetyakapartir from "./projetyakapartir.svelte";
   import './descweb.css';
-  
   import gridpro from '../../img/agde.jpg';
   
-  let pagea4 = ''; // Variable locale pour ce composant
+  let pagea4 = ''; 
   
   function show(component) {
     pagea4 = component;
   }
 </script>
 
-<div class="containerwzb">
-    <div class="partiegaucheweb">
-     <img src={gridpro} alt="Projet Grid" />
-       <a class:active={pagea4 === 'Projetyakapartir'} href="#" on:click|preventDefault={() => show('Projetyakapartir')} >
-          En savoir +
-        </a>
-    </div>
-
-  <div class="">
+<div class="project-container">
     {#if pagea4 === 'Projetyakapartir'}
-      <Projetyakapartir />
-     {:else}
-      <div class="accueil">
-        <h1 class="text-center">Maquette CSS Grid</h1>
-        <p class="textenter">Voici une maquette faite en deuxième année de BUT MMI.</p>
-        <div class="description2">
-        <p>
-          Le projet <em>"DS Grid "</em> a été réalisé durant notre deuxième année de BUT Métiers du Multimédia et de l’Internet.  
-          L’objectif principal de ce travail était de nous initier à l’utilisation de <strong>CSS Grid</strong>, une technologie essentielle pour organiser et structurer des mises en page modernes et responsives.  
-        </p>
-
-        <p>
-            À travers ce projet, nous avons appris à concevoir une grille flexible permettant de répartir différents blocs de contenu (textes, images, éléments graphiques) de manière claire et harmonieuse.  
-            Nous avons ainsi pu expérimenter l’agencement d’un site en travaillant sur la hiérarchie visuelle, l’équilibre des espaces et l’adaptation de la mise en page aux différents formats d’écran.  
-        </p>
-
-        <p>
-            <em>DS Grid</em> fut donc un projet formateur, combinant pratique du <strong>CSS Grid</strong> et réflexion sur l’ergonomie et la lisibilité d’une interface web.
-        </p>
-        <p>
-            <strong>Crédits :</strong> Rémi <i>EDMOND </i> 
-        </p>
+        <Projetyakapartir />
+        <button class="btn-back" on:click={() => show('')}>
+            <i class='bx bx-left-arrow-alt'></i> Retour à la description
+        </button>
+    {:else}
+        <!-- En-tête : Numéro 03 et Titre -->
+        <div class="project-header">
+            <span class="big-num">03</span>
+            <div class="title-block">
+                <h2 class="project-name">Projet <span class="highlight">DS GRID</span></h2>
+                <p class="project-subtitle">YAKA PARTIR — BUT MMI 2</p>
+            </div>
         </div>
-      </div>
-     
+
+        <div class="project-content">
+            <!-- Partie Visuelle -->
+            <div class="visual-side">
+                <div class="img-frame">
+                    <img src={gridpro} alt="Projet Yaka Partir">
+                </div>
+                <button class="btn-editorial" on:click|preventDefault={() => show('Projetyakapartir')}>
+                    Détails du projet <i class='bx bx-plus-circle'></i>
+                </button>
+            </div>
+
+            <!-- Partie Texte -->
+            <div class="info-side">
+                <div class="specs">
+                    <div class="spec-item"><span>PROJET</span> Yaka Partir</div>
+                    <div class="spec-item"><span>DOMAINE</span> Tourisme / Voyage</div>
+                    <div class="spec-item"><span>CREDITS</span>  Rémi EDMOND</div>
+                </div>
+
+                <div class="text-description">
+                    <p>
+                        Réalisé en deuxième année de BUT MMI, ce projet intitulé <em>"DS Grid"</em> avait pour but de perfectionner notre maîtrise des structures complexes via <strong>CSS Grid</strong>.
+                    </p>
+                    <p>
+                        L'enjeu était de concevoir une interface capable d'adapter des blocs de contenus hétérogènes (galeries photos, textes descriptifs) sur des formats d'écrans variés, tout en garantissant une <strong>hiérarchie visuelle</strong> impeccable.
+                    </p>
+                    <p class="quote">
+                        "Une réflexion poussée sur l'agencement flexible et l'ergonomie d'un site de destination."
+                    </p>
+                </div>
+            </div>
+        </div>
     {/if}
-  </div>
 </div>
