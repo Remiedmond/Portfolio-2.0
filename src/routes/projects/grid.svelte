@@ -13,9 +13,7 @@
 <div class="project-container">
     {#if pagea4 === 'Projetyakapartir'}
         <Projetyakapartir />
-        <button class="btn-back" on:click={() => show('')}>
-            <i class='bx bx-left-arrow-alt'></i> Retour à la description
-        </button>
+        
     {:else}
         <!-- En-tête : Numéro 03 et Titre -->
         <div class="project-header">

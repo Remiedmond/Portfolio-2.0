@@ -9,6 +9,8 @@ import Laplaylistimg from '../../img/laplaylist.png';
 import Instaphpimg from '../../img/instagramprojet.png';
 import Bddimg from '../../img/series.png';
 import Duckescapeimg from '../../img/duckescape.png';
+import Friseimg from '../../img/frise.png';
+import Escapeimg from '../../img/escape.png';
 import './projects.css';
 
   let pagea = ''; 
@@ -37,8 +39,6 @@ import './projects.css';
 
 
 
-<div class="containerprojects"> 
-
   <div class=" ">
     {#if pagea === 'Test'}
   <Test />
@@ -64,6 +64,10 @@ import './projects.css';
   <BDDprojet />
 {:else if pagea === 'Duckescape'}
   <Duckescape />
+{:else if pagea === 'Frise'}
+  <Frise />
+{:else if pagea === 'Escape'}
+  <Escape />
 {:else}
  
  <div class="imageweb">
@@ -72,8 +76,17 @@ import './projects.css';
       <img src={Duckescapeimg} alt="Image Logo la Playlist festival">
     </a> 
   </div>
+  <div class="image-container">
+    <a class=" {pagea === 'Frise' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Frise')}>
+      <img src={Friseimg} alt="Image Frise">
+    </a>
+  </div>
+  <div class="image-container">
+    <a class=" {pagea === 'Escape' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Escape')}>
+      <img src={Escapeimg} alt="Image Escape">
+    </a>
+  </div>
 </div> 
 {/if}
 
   </div>
-</div>

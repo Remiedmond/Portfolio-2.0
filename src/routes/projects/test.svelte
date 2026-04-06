@@ -9,6 +9,9 @@ import Laplaylistimg from '../../img/laplaylist.png';
 import Instaphpimg from '../../img/instagramprojet.png';
 import Bddimg from '../../img/series.png';
 import Duckescapeimg from '../../img/duckescape.png';
+import Friseimg from '../../img/frise.png';
+import Escapeimg from '../../img/escape.png';
+import Polarizimg from '../../img/polariz.png';
 import './projects.css';
 
   let pagea = ''; 
@@ -29,13 +32,14 @@ import './projects.css';
   import Instaphp from "./instamgram.svelte";
   import BDDprojet from "./bdd.svelte";
   import Duckescape from "./duckescape.svelte";
+  import Frise from "./frise.svelte";
+  import Escape from "./escape.svelte";
+  import Polariz from "./polariz.svelte";
 
 
 </script>
 
 
-
-<div class="containerprojects"> 
 
   <div class=" ">
     {#if pagea === 'Test'}
@@ -62,6 +66,12 @@ import './projects.css';
   <BDDprojet />
 {:else if pagea === 'Duckescape'}
   <Duckescape />
+{:else if pagea === 'Frise'}
+  <Frise />
+{:else if pagea === 'Escape'}
+  <Escape />
+{:else if pagea === 'Polariz'}
+  <Polariz />
 {:else}
  
  <div class="imageweb">
@@ -85,8 +95,12 @@ import './projects.css';
       <img src={Gsapimg} alt="Image GSAP">
     </a> 
   </div>
+  <div class="image-container">
+    <a class=" {pagea === 'Polariz' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Polariz')}>
+      <img src={Polarizimg} alt="Image logo Polariz">
+    </a>
 </div> 
+</div>
 {/if}
 
   </div>
-</div>
