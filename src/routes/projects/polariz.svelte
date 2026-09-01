@@ -7,7 +7,7 @@
 
 <div class="project-container">
     <div class="project-header">
-        <span class="big-num">12</span>
+        <span class="big-num">05</span>
         <div class="title-block">
             <h2 class="project-name"><span class="highlight">POLARIZ</span></h2>
             <p class="project-subtitle">AGENCE WEB FICTIVE — STRATÉGIE & IDENTITÉ</p>

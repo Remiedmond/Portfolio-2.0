@@ -56,7 +56,7 @@ function selectImage(image) {
 
 
 <div class="designglobal">
-  <img class="bannière" src={bannière} alt="Bannière">
+  <img class="banniere" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
     <a class='cartedumonderetour' href='{base}/design/graphisme'>Retour</a>

@@ -1,8 +1,8 @@
 <script>
 import bannière from '../../../../img/Bannière.png';
 import cartedumonde from '../../../../img/carte-du-monde.png';
-import Logotalentsenscène from '../../../../img/design/Logo Design 3.png';
-import Logotalentsenscènedehors from '../../../../img/design/Logo Design 3 panneau.png';
+import LogoAna from '../../../../img/design/logo Ana avocat.png';
+import LogoCabinet from '../../../../img/design/cabinetavocat2.png';
 
 import '../.././design.css';
 import { base } from '$app/paths';
@@ -11,15 +11,15 @@ import { base } from '$app/paths';
 const images = [
   {
     id: 1,
-    url: Logotalentsenscène,
-    alt: 'Version finale',
-    title: "Version prototype d'une association culturelle de Beaurains"
+    url: LogoAna,
+    alt: 'Logo de l’avocate Maitre Ana DA COSTA FARIA',
+    title: "Logo de l’avocate Maitre Ana DA COSTA FARIA"
   },
   {
     id: 2,
-    url: Logotalentsenscènedehors,
-    alt: 'Version condition réel',
-    title: 'Version condition réel'
+    url: LogoCabinet,
+    alt: 'Logo du cabinet d’avocats',
+    title: 'Logo sur un cabinet d’avocats'
   }
 ];
 
@@ -29,6 +29,7 @@ let selectedImage = images[0];
 function selectImage(image) {
   selectedImage = image;
 }
+
 
 
 </script>
@@ -43,7 +44,7 @@ function selectImage(image) {
 
     <div class="gallery-container">
         <div class="gallery-omages">
-            <h2 class="gallery-title">Logo prototype de Talents en scène</h2>
+            <h2 class="gallery-title">Logo de l’avocate Maitre Ana DA COSTA FARIA</h2>
             
             <!-- Image principale -->
             <div class="main-image-container">

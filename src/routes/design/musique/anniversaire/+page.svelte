@@ -35,7 +35,7 @@ function selectImage(image) {
 
 
 <div class="designglobal">
-  <img class="bannière" src={bannière} alt="Bannière">
+  <img class="banniere" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
       <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a>
@@ -79,7 +79,7 @@ function selectImage(image) {
 
         </div>
         <div class="gallery-blabla">
-        <p>Ce badge commémoratif a été spécialement conçu pour célébrer les 40 ans de l'Harmonie d'Achicourt lors de la Sainte-Cécile 2024, créé par vos soins pour honorer cette étape importante.</p>
+        <p>Ce badge commémoratif a été spécialement conçu pour célébrer les 40 ans de l'Harmonie d'Achicourt lors de la Sainte-Cécile 2024.</p>
         
         <div class="horaires">
             <p><strong>Le badge :</strong></p>
@@ -90,15 +90,15 @@ function selectImage(image) {
         </div>
         
         <p><strong>Le design symbolique :</strong>
-        Le badge adopte un format circulaire sur fond dégradé bleu-rose, évoquant un coucher de soleil. Au centre, le chiffre "40" est mis en valeur, flanqué des années "1984" et "2024" qui marquent cette trajectoire de quatre décennies.
+        Le badge adopte un format circulaire sur fond dégradé bleu-rose, évoquant les couleurs des différents logo au cours des années. Au centre, le chiffre "40" est mis en valeur, flanqué des années "1984" et "2024" qui marquent cette trajectoire de quatre décennies.
         </p>
         
         <p><strong>Les éléments décoratifs :</strong>
-        Des guirlandes de fanions multicolores ornent la partie supérieure, créant une atmosphère festive de célébration. Une portée musicale avec des notes serpente gracieusement à travers le design, rappelant l'essence musicale de l'association.
+        Des notes de musiques ainsi que le logo actuel ornent la partie supérieure, créant une atmosphère festive de célébration. Une portée musicale avec des notes serpente gracieusement à travers le design, rappelant l'essence musicale de l'association.
         </p>
         
         <p><strong>L'identité visuelle :</strong>
-        Le logo officiel de l'Harmonie d'Achicourt occupe une place d'honneur, avec sa représentation du sanglier emblématique et la mention "Jeune Harmonie d'Achicourt". Le moulin à vent de l'école de musique  apparaît également, liant l'institution pédagogique à l'ensemble musical.
+        L'ancien logo officiel de l'Association occupe une place d'honneur, avec sa représentation du baudet emblématique d'Achicourt et la mention "Jeune Orchestre Harmonique d'Achicourt". Le moulin à vent de l'école de musique apparaît également, liant l'institution pédagogique à l'ensemble musical.
         </p>
         
         <p><strong>Le symbole de fête :</strong>

@@ -1,6 +1,5 @@
 <script>
 import bannière from '../../img/Bannière.png';
-import handballeur from '../../img/hanballeur.png';
 import './mention.css';
 
 
@@ -17,9 +16,9 @@ import './mention.css';
   <section>
     <h2>Éditeur du site</h2>
     <p>
-      Site : <strong>remi-edmond.fr</strong><br />
+      Site : <strong>https://remiedmond.github.io/Portfolio-2.0/</strong><br />
       Propriétaire & responsable de publication : <strong>Rémi EDMOND</strong><br />
-      Adresse : 29 avenue Émile DUQUESNOY, 62217 Achicourt, France<br />
+      Adresse : avenue Émile DUQUESNOY, 62217 Achicourt, France<br />
       Email : <a href="mailto:remi.edmond6230@gmail.com">
         remi.edmond6230@gmail.com
       </a>
@@ -30,9 +29,9 @@ import './mention.css';
   <section>
     <h2>Hébergement</h2>
     <p>
-      Le site est hébergé par <strong>o2switch</strong>.<br />
-      Site web : <a href="https://www.o2switch.fr" target="_blank">
-        www.o2switch.fr
+      Le site est hébergé par <strong>Gitlab</strong>.<br />
+      Site web : <a href="https://www.gitlab.com" target="_blank">
+        www.gitlab.com
       </a>
     </p>
   </section>
@@ -66,9 +65,8 @@ import './mention.css';
     </p>
   </section>
   <section>
-<p> Dernière mise à jour : 29 août 2025 </p>
+<p> Dernière mise à jour : 01 septembre 2026 </p>
  </section>
  
-<img class="hanballeurmention" src={handballeur}>
 </main>
 </div>

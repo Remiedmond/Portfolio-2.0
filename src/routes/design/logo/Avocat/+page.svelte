@@ -1,8 +1,8 @@
 <script>
 import bannière from '../../../../img/Bannière.png';
 import cartedumonde from '../../../../img/carte-du-monde.png';
-import Logotalentsenscène from '../../../../img/design/Logo Design 3.png';
-import Logotalentsenscènedehors from '../../../../img/design/Logo Design 3 panneau.png';
+import LogoManon from '../../../../img/design/logo_manon.png';
+import LogoCabinetavocat from '../../../../img/design/cabinetavocat.png';
 
 import '../.././design.css';
 import { base } from '$app/paths';
@@ -11,15 +11,15 @@ import { base } from '$app/paths';
 const images = [
   {
     id: 1,
-    url: Logotalentsenscène,
-    alt: 'Version finale',
-    title: "Version prototype d'une association culturelle de Beaurains"
+    url: LogoManon,
+    alt: 'Logo de l’avocate Maitre Manon FONTAINE',
+    title: "Logo de l’avocate Maitre Manon FONTAINE"
   },
   {
     id: 2,
-    url: Logotalentsenscènedehors,
-    alt: 'Version condition réel',
-    title: 'Version condition réel'
+    url: LogoCabinetavocat,
+    alt: 'Logo du cabinet d’avocats',
+    title: 'Logo sur un cabinet d’avocats'
   }
 ];
 
@@ -29,6 +29,7 @@ let selectedImage = images[0];
 function selectImage(image) {
   selectedImage = image;
 }
+
 
 
 </script>
@@ -43,7 +44,7 @@ function selectImage(image) {
 
     <div class="gallery-container">
         <div class="gallery-omages">
-            <h2 class="gallery-title">Logo prototype de Talents en scène</h2>
+            <h2 class="gallery-title">Logo de l’avocate Maitre Manon FONTAINE</h2>
             
             <!-- Image principale -->
             <div class="main-image-container">

@@ -13,32 +13,43 @@ import deco1img from '../../../img/design/Décoration Partie 1.png';
 import deco2img from '../../../img/design/Décoration Accueil de loisirs.png'; 
 import REmiportrzait from '../../../img/design/edmondremi.png';
 import REmiportrzaitdheors from '../../../img/design/portraitremi.png';
+import AfficheMainSquare from '../../../img/design/MainSquareFestival2026_AFFICHE.png';
+import AfficheMainSquareExterieur from '../../../img/design/affiche mainsquare exterieur.png';
+import afficheAchicourt from '../../../img/design/Affiche fête de la bassure version finale.png';
+import dehorsaffichebassure from '../../../img/design/bassureporte.png';
+
 
 import '.././design.css';
 </script>
 
 <div class="designglobal">
-  <img class="bannière" src={bannière}>
+  <img class="banniere" src={bannière} alt="Bannière">
 
     <div class="couleurbackroung">
       <div class="designcartemonde2">
         <a class='cartedumonderetour' href='{base}/design'>Retour</a>
 
         <div class="cartedumondeflexwithg">
+          <a class="cartedumondemusiqua" href="{base}/design/evenementiel/mainsquare2026">
+              <img class="cartedumondestcecile" src={AfficheMainSquareExterieur} alt="Affiche Main Square Festival 2026"  />
+            </a>
+            <a class="cartedumondemusiqua" href="{base}/design/evenementiel/fetedelabassure">
+              <img class="cartedumondeamicale" src={dehorsaffichebassure} alt="Affiche de la Fête de la Bassure 2026 d'Achicourt" />
+            </a>
             <a class="cartedumondemusiqua" href="{base}/design/evenementiel/miroir">
-              <img class="cartedumondestcecile" src={miroirdehors} />
+              <img class="cartedumondestcecile" src={miroirdehors} alt="Affiche sur le theme Miroir"  />
             </a>
             <a class="cartedumondemusiqua" href="{base}/design/evenementiel/jeux olympique">
-              <img class="cartedumondeamicale" src={Jeuxolympiquesgoalball} />
+              <img class="cartedumondeamicale" src={Jeuxolympiquesgoalball} alt="Jeux Olympiques" />
             </a>
              <a class="cartedumondemusiqua" href="{base}/design/evenementiel/centredeloisirs">
-              <img class="cartedumondebanniere" src={deco2img} />
+              <img class="cartedumondebanniere" src={deco2img} alt="Centre de loisirs" />
             </a>
             <a class="cartedumondemusiqua" href="{base}/design/evenementiel/mystere">
-              <img class="cartedumondebanniere" src={ùysterealiutimg} />
+              <img class="cartedumondebanniere" src={ùysterealiutimg} alt="Affiche Mystère à l'IUT" />
             </a>
             <a class="cartedumondemusiqua" href="{base}/design/evenementiel/portrait">
-              <img class="cartedumondebanniere" src={REmiportrzaitdheors} />
+              <img class="cartedumondebanniere" src={REmiportrzaitdheors} alt="Portrait" />
             </a>
         </div>
       </div>

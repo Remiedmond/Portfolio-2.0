@@ -7,7 +7,7 @@
 
 <div class="project-container">
     <div class="project-header">
-        <span class="big-num">10</span>
+        <span class="big-num">03</span>
         <div class="title-block">
             <h2 class="project-name">Frise <span class="highlight">CHRONOLOGIQUE</span></h2>
             <p class="project-subtitle">OUTIL DE VISUALISATION HISTORIQUE — BUT MMI</p>

@@ -119,7 +119,7 @@ import './profil.css';
 
         <Propos />
         <p class="description">
-          Je m'appelle Rémi EDMOND, j'ai 20 ans et je suis actuellement étudiant en BUT Métiers du Multimédia et de l'Internet à l'IUT de Lens.  
+          Je m'appelle Rémi EDMOND, j'ai 21 ans et je suis actuellement étudiant en BUT Métiers du Multimédia et de l'Internet à l'IUT de Lens.  
           Comme vous pouvez le voir sur les photos ci-dessus, je suis passionné de sport et de musique.  
           Je joue du trombone depuis l'âge de 6 ans et je fais partie d'une harmonie.  
           Côté sport, je pratique le handball en tant que gardien, ainsi que le tennis, le cyclisme et la course à pied.

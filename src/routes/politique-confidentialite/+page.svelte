@@ -1,6 +1,5 @@
 <script>
 import bannière from '../../img/Bannière.png';
-import handballeur from '../../img/hanballeur.png';
 import './politique.css';
 
 
@@ -42,10 +41,10 @@ import './politique.css';
   <section>
     <h2>Hébergement</h2>
     <p>
-      Le site est hébergé par <strong>o2switch</strong>.<br />
+      Le site est hébergé par <strong>GitHub</strong>.<br />
       Plus d’informations sur : 
-      <a href="https://www.o2switch.fr" target="_blank" class="text-blue-600 underline">
-        www.o2switch.fr
+      <a href="https://www.github.com" target="_blank" class="text-blue-600 underline">
+        www.github.com
       </a>.
     </p>
   </section>
@@ -73,9 +72,8 @@ import './politique.css';
     </p>
   </section>
   <section>
-<p> Dernière mise à jour : 29 août 2025 </p>
+<p> Dernière mise à jour : 01 septembre 2026 </p>
  </section>
  
-<img class="hanballeurmention" src={handballeur}>
 </main>
 </div>

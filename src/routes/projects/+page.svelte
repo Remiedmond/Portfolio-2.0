@@ -13,6 +13,7 @@ import Duckescapeimg from '../../img/duckescape.png';
 import Friseimg from '../../img/frise.png';
 import Escapeimg from '../../img/escape.png';
 import Polarizimg from '../../img/polariz.png';
+import DTC from '../../img/DTC.png';
 
 
 import './projects.css';
@@ -41,6 +42,7 @@ import Web from '$lib/web.svelte';
   import Frise from "./frise.svelte"
   import Escape from "./escape.svelte"
   import Polariz from "./polariz.svelte";
+  import DansTaChope from "./danstachope.svelte";
 
 
 </script>
@@ -104,9 +106,36 @@ import Web from '$lib/web.svelte';
   <Escape />
 {:else if pagea === 'Polariz'}
   <Polariz />
+{:else if pagea === 'DansTaChope'}
+  <DansTaChope />
 {:else}
  
  <div class="imageweb">
+ <div class="image-container">
+    <a class=" {pagea === 'DansTaChope' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('DansTaChope')}>
+      <img src={DTC} alt="Image logo Dans ta chope">
+    </a>
+</div>
+ <div class="image-container">
+    <a class=" {pagea === 'Duckescape' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Duckescape')}>
+      <img src={Duckescapeimg} alt="Image Logo Duck Escape">
+    </a> 
+  </div>
+  <div class="image-container">
+    <a class=" {pagea === 'Frise' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Frise')}>
+      <img src={Friseimg} alt="Image représentant la frise chronologique">
+    </a>
+</div> 
+<div class="image-container">
+    <a class=" {pagea === 'Escape' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Escape')}>
+      <img src={Escapeimg} alt="Image Logo Escape game">
+    </a>
+</div>
+<div class="image-container">
+    <a class=" {pagea === 'Polariz' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Polariz')}>
+      <img src={Polarizimg} alt="Image logo Polariz">
+    </a>
+</div>
   <div class="image-container">
     <a class=" {pagea === 'Snow' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Snow')}>
       <img src={montagnee} alt="Image Snowboard">
@@ -147,26 +176,6 @@ import Web from '$lib/web.svelte';
       <img src={Bddimg} alt="Image Logo bdd projet">
     </a> 
   </div>
-  <div class="image-container">
-    <a class=" {pagea === 'Duckescape' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Duckescape')}>
-      <img src={Duckescapeimg} alt="Image Logo Duck Escape">
-    </a> 
-  </div>
-  <div class="image-container">
-    <a class=" {pagea === 'Frise' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Frise')}>
-      <img src={Friseimg} alt="Image représentant la frise chronologique">
-    </a>
-</div> 
-<div class="image-container">
-    <a class=" {pagea === 'Escape' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Escape')}>
-      <img src={Escapeimg} alt="Image Logo Escape game">
-    </a>
-</div>
-<div class="image-container">
-    <a class=" {pagea === 'Polariz' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Polariz')}>
-      <img src={Polarizimg} alt="Image logo Polariz">
-    </a>
-</div>
 </div>
 {/if}
 

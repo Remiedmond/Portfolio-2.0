@@ -7,7 +7,7 @@
 
 <div class="project-container">
     <div class="project-header">
-        <span class="big-num">11</span>
+        <span class="big-num">04</span>
         <div class="title-block">
             <h2 class="project-name"><span class="highlight">LOST</span> TRACK</h2>
             <p class="project-subtitle">ESCAPE GAME NUMÉRIQUE — EXPÉRIENCE IMMERSIVE</p>

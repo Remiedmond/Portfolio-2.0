@@ -7,9 +7,9 @@
 </script>
 
 <div class="project-container">
-    <!-- En-tête : Numéro 09 et Titre -->
+    <!-- En-tête : Numéro 02 et Titre -->
     <div class="project-header">
-        <span class="big-num">09</span>
+        <span class="big-num">02</span>
         <div class="title-block">
             <h2 class="project-name"><span class="highlight">DUCK</span> ESCAPE</h2>
             <p class="project-subtitle">GAME DESIGN — STRATÉGIE & TACTIQUE</p>

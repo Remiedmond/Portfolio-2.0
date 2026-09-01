@@ -2,22 +2,22 @@
 import { onMount } from 'svelte';
 import bannière from '../../../../img/Bannière.png';
 import cartedumonde from '../../../../img/carte-du-monde.png';
-import stpatrickdehorsimg from '../../../../img/design/Musiqua/Affiche-de-Saint-Patrick dehors.png';
-import stpatrickafficheimg from '../../../../img/design/Musiqua/Affiche-de-Saint-Patrick-7emeversion.jpg';
+import stpatrickdehorsimg2026 from '../../../../img/design/Musiqua/stpat2026.png';
+import stpatrickafficheimg2026 from '../../../../img/design/Musiqua/Saint Patrick 2026.png';
 import '../.././design.css';
 import { base } from '$app/paths';
 
 const images = [
   {
     id: 1,
-    url: stpatrickdehorsimg,
-    alt: 'Affiche Saint-Patrick dehors',
+    url: stpatrickdehorsimg2026,
+    alt: 'Affiche Saint-Patrick 2026',
     title: 'Version extérieure'
   },
   {
     id: 2,
-    url: stpatrickafficheimg,
-    alt: 'Affiche Saint-Patrick 7ème version',
+    url: stpatrickafficheimg2026,
+    alt: 'Affiche Saint-Patrick edition 2026',
     title: 'Version finale'
   }
 ];
@@ -30,7 +30,7 @@ function selectImage(image) {
 </script>
 
 <div class="designglobal">
-  <img class="bannière" src={bannière} alt="Bannière">
+  <img class="banniere" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
       <a class='cartedumonderetour' href='{base}/design/musique'>Retour</a>
@@ -38,7 +38,7 @@ function selectImage(image) {
 
     <div class="gallery-container">
         <div class="gallery-omages">
-            <h2 class="gallery-title">Affiches Saint-Patrick</h2>
+            <h2 class="gallery-title">Affiche Saint-Patrick 2ème édition 2026</h2>
             
             <!-- Image principale -->
             <div class="main-image-container">
@@ -78,7 +78,7 @@ function selectImage(image) {
         
         <div class="horaires">
             <p><strong>L'événement :</strong></p>
-            <p>Date : Lundi 17 mars 2025 à 19h</p>
+            <p>Date : Lundi 17 mars 2026 à 18h</p>
             <p>Lieu : Espace François Mitterrand à Achicourt</p>
             <p>Entrée : Ouvert à tous</p>
             <p>Animation : Vente de boissons et petite restauration</p>
@@ -97,7 +97,7 @@ function selectImage(image) {
         </p>
         
         <p><strong>Les partenaires :</strong>
-        L'événement est organisé par l'AEMA (Association de l'École de Musique d'Achicourt) en partenariat avec la ville d'Achicourt et l'école de musique Micale.
+        L'événement est organisé par l'AEMA (Amicale de l'École de Musique d'Achicourt) en partenariat avec la ville d'Achicourt et l'école de musique.
         </p>
         
         <p>Ce concert promet une soirée festive mêlant musique classique d'harmonie et sonorités traditionnelles irlandaises dans une ambiance conviviale.</p>

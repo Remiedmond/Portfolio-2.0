@@ -61,7 +61,15 @@
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </svelte:head>
 
-<img src={IMGaccueil} class="imageaccueil" alt="Image d'accueil">
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/_8QUUhQFyZI?autoplay=1&mute=1&playsinline=1"
+    title="CV Vidéo Rémi EDMOND"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
 
 <main class="container">
   <Reveal>
@@ -70,7 +78,7 @@
         <h1> Bonjour, </h1>
         <h3> Je suis Rémi !</h3>
         <p> 
-          Actuellement en 3ème année de BUT MMI, je façonne des expériences numériques où la technique rencontre l’image. 
+          Actuellement en 1ère année d'Expert en informatique et système d'information (BAC+4), je façonne des expériences numériques où la technique rencontre l’image. 
           Mon parcours m'a permis de fusionner le code, la stratégie de communication et l'audiovisuel pour concevoir 
           des projets web complets et immersifs.
         </p>

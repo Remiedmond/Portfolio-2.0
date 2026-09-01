@@ -15,7 +15,7 @@ import '.././design.css';
 </script>
 
 <div class="designglobal">
-  <img class="bannière" src={bannière}>
+  <img class="banniere" src={bannière} alt="Bannière">
 
     <div class="couleurbackroung">
       <div class="designcartemonde2">
@@ -23,13 +23,13 @@ import '.././design.css';
 
         <div class="cartedumondeflexwithg">
             <a class="cartedumondemusiqua" href="{base}/design/graphisme/livrejackkerouel">
-              <img class="cartedumondestcecile" src={LivreJackk} />
+              <img class="cartedumondestcecile" src={LivreJackk} alt="Livre Jack Kerouac" />
             </a>
             <a class="cartedumondemusiqua" href="{base}/design/graphisme/museeexcalier">
-              <img class="cartedumondeamicale" src={Museeexcalier} />
+              <img class="cartedumondeamicale" src={Museeexcalier} alt="Musée de l'Excalier" />
             </a>
              <a class="cartedumondemusiqua" href="{base}/design/graphisme/livredaftpunk">
-              <img class="cartedumondebanniere" src={LivreDaftpunk} />
+              <img class="cartedumondebanniere" src={LivreDaftpunk} alt="Livre Daft Punk" />
             </a>
         </div>
       </div>

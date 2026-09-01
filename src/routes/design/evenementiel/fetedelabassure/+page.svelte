@@ -1,8 +1,8 @@
 <script>
 import bannière from '../../../../img/Bannière.png';
 import cartedumonde from '../../../../img/carte-du-monde.png';
-import deco1img from '../../../../img/design/Décoration Partie 1.png'; 
-import deco2img from '../../../../img/design/Décoration Accueil de loisirs.png'; 
+import afficheAchicourt from '../../../../img/design/Affiche fête de la bassure version finale.png';
+import dehorsaffichebassure from '../../../../img/design/bassureporte.png';
 
 import '../.././design.css';
 import { base } from '$app/paths';
@@ -10,15 +10,15 @@ import { base } from '$app/paths';
 const images = [
   {
     id: 1,
-    url: deco1img,
-    alt: 'Version finale 1',
-    title: "Version finale Affiche 1"
+    url: afficheAchicourt,
+    alt: 'Affiche de la Fête de la Bassure 2026',
+    title: "Affiche de la Fête de la Bassure 2026"
   },
   {
     id: 2,
-    url: deco2img,
-      alt: 'Version finale 2',
-    title: "Version finale Affiche 2"
+    url: dehorsaffichebassure,
+    alt: 'Affiche sur une porte pour la Fête de la Bassure 2026',
+    title: "Affiche sur une porte pour la Fête de la Bassure 2026"
   }
 ];
 
@@ -38,12 +38,12 @@ function selectImage(image) {
   <img class="banniere" src={bannière} alt="Bannière">
 
   <div class="couleurbackroungd">
-      <a class='cartedumonderetour' href='{base}/design/evenementiel'>Retour</a>
+     <a class='cartedumonderetour' href='{base}/design/evenementiel'>Retour</a> 
     
 
     <div class="gallery-container">
         <div class="gallery-omages">
-            <h2 class="gallery-title">Affiche pour centre de loisirs</h2>
+            <h2 class="gallery-title">Affiche pour la Fête de la Bassure organisée par la mairie d'Achicourt</h2>
             
             <!-- Image principale -->
             <div class="main-image-container">
@@ -79,7 +79,10 @@ function selectImage(image) {
 
         </div>
         <div class="gallery-blabla">
-            <p>Affiches faites dans le cadre d'aiguiller les parents à quel endroit ce trouve la garderie et de quand à quand ce passe le centre. </p>
+        <h1>Fête de la Bassure 2026</h1>
+        <p>Affiche réalisée pour la fête de la Bassure organisée par la mairie d'Achicourt. L'affiche a été conçue pour promouvoir l'événement et attirer l'attention du public. Elle met en avant les activités et les attractions prévues lors de la fête, tout en reflétant l'esprit festif et convivial de l'événement.</p>
+        <p>Le design de l'affiche a été pensé pour être à la fois attrayant et informatif, en utilisant des couleurs vives et des éléments graphiques qui évoquent la joie et la célébration. L'objectif était de créer une affiche qui capte l'attention et incite les gens à participer à la fête.</p>
+        <p>En résumé, cette affiche pour la fête de la Bassure est un outil de communication essentiel pour promouvoir l'événement et encourager la participation de la communauté locale.</p>
         </div>
     </div>
   </div>
