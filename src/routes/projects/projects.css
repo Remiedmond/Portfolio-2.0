@@ -34,8 +34,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: baseline;
-    align-content: baseline;
     gap: 2rem;
     margin-left: 1rem;
 }

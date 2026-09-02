@@ -14,32 +14,32 @@ const images = [
   {
     id: 1,
     url: LivreJackk,
-    alt: 'Version finale',
-    title: "Version finale du Logo Crips"
+    alt: 'Version Mockup de la couverture avant du livre sur l’histoire de Jack Kerouac',
+    title: "Version mockup de la couverture du livre sur l'histoire de Jack Kerouac"
   },
   {
     id: 2,
     url: LivreJackinterieur,
-    alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    alt: 'Version mockup de l’intérieur du livre sur l’histoire de Jack Kerouac',
+    title: "Version mockup de l'intérieur du livre sur l'histoire de Jack Kerouac"
   },
    {
     id: 3,
     url: LivreJackexterieur,
-    alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    alt: 'Version couverture du livre sur l’histoire de Jack Kerouac',
+    title: "Version couverture du livre sur l'histoire de Jack Kerouac"
   },
   {
     id: 4,
     url: LivreJackmarquepage,
-    alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    alt: 'Version marque page du livre sur l’histoire de Jack Kerouac',
+    title: "Version marque page du livre sur l'histoire de Jack Kerouac"
   },
   {
     id: 5,
     url: LivreJackinterieurmp,
-    alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    alt: 'Version Mockup de l’intérieur du livre sur l’histoire de Jack Kerouac avec le marque page',
+    title: "Version mockup de l'intérieur du livre sur l'histoire de Jack Kerouac avec le marque page"
   }
 ];
 

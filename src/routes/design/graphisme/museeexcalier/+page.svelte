@@ -12,14 +12,14 @@ const images = [
   {
     id: 1,
     url: Museeexcalierfd,
-    alt: 'Version finale',
-    title: "Version finale du Logo Crips"
+    alt: 'Version répétition du logo pour former un escalier',
+    title: "Version répétition du logo pour former un escalier"
   },
   {
     id: 2,
     url: Museeexcalier,
     alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    title: "Version condition réel sur une maison"
   }
 ];
 

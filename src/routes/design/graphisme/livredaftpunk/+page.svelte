@@ -13,20 +13,20 @@ const images = [
   {
     id: 1,
     url: LivreDaftpunk,
-    alt: 'Version finale',
-    title: "Version finale du Logo Crips"
+    alt: 'Version mockup de la couverture du livre sur l’histoire des Daft Punk',
+    title: "Mockup de la couverture du livre sur l'histoire des Daft Punk"
   },
   {
     id: 2,
     url: LivreDaftpunkexterieur,
-    alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    alt: 'Version couverture du livre sur l’histoire des Daft Punk',
+    title: "Version couverture du livre sur l'histoire des Daft Punk"
   },
    {
     id: 3,
     url: LivreDaftpunkmp,
-    alt: 'Version condition réel',
-    title: "Version condition réel sur l'entrée du métro"
+    alt: 'Version marque page du livre sur l’histoire des Daft Punk',
+    title: "Version marque page du livre sur l'histoire des Daft Punk"
   }
 ];
 

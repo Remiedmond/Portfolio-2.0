@@ -3,32 +3,55 @@
   import banniere from '../../../img/Bannière.png';
   import '.././design.css';
 
-  // Liste de tes projets vidéo
   const videos = [
     {
       id: 'tzwzCRK_LR0',
       title: 'Présentation du Trombone — École de musique d’Achicourt',
       category: 'Pédagogie & Musique',
       desc: 'Vidéo dynamique et ludique pour faire découvrir le trombone à coulisse et inviter les nouveaux élèves à rejoindre la classe de l’école de musique.',
-      type: 'video'
+      type: 'youtube',
+      aspect: '16/9',
+      thumb: 'https://img.youtube.com/vi/tzwzCRK_LR0/mqdefault.jpg'
+    },
+    {
+      id: 'le-pre-achicourt',
+      src: `${base}/videos/le-pre-achicourt.mp4`, // Chemin vers ta vidéo locale dans static/videos/
+      title: 'Le Pré d’Achicourt — Nature & Biodiversité',
+      category: 'Communication Municipale',
+      desc: 'Reportage et valorisation de la zone humide préservée par la commune et la communauté urbaine d’Arras (gestion différenciée, triton crêté et promenade du Crinchon).',
+      type: 'local',
+      aspect: '9/16',
+      thumb: `${base}/img/achicourt.png` // Ou une capture du début de la vidéo
+    },
+    {
+      id: 'QyEcFmxvOCU',
+      title: 'WebTV - à la manière du jeu télévisé "Burger Quiz""',
+      category: 'Captation & Performance',
+      desc: 'Présentation interactive d\'une émission de quiz en ligne. J\'ai réalisé la captation audio, le montage et l\'habillage graphique de cette émission fictive, en m\'inspirant du style visuel de l\'émission "Burger Quiz".',
+      type: 'youtube',
+      aspect: '16/9',
+      thumb: 'https://img.youtube.com/vi/QyEcFmxvOCU/mqdefault.jpg'
     },
     {
       id: 'PLWknKVObRTwA96Pkye7B4-nkM1Sf_BFm7',
       title: 'Corse vue du Ciel — Série en Drone',
       category: 'Prise de vue aérienne',
       desc: 'Série de vidéos immersives en drone explorant les paysages et points de vue emblématiques de la Corse.',
-      type: 'playlist'
+      type: 'playlist',
+      aspect: '16/9',
+      thumb: 'https://img.youtube.com/vi/edfD7uzSJkc/mqdefault.jpg'
     },
     {
       id: '_8QUUhQFyZI',
       title: 'CV Vidéo — Rémi EDMOND',
       category: 'Présentation & Parcours',
       desc: 'Présentation de mon profil, de mes compétences en développement web, design graphique et audiovisuel.',
-      type: 'video'
+      type: 'youtube',
+      aspect: '16/9',
+      thumb: 'https://img.youtube.com/vi/_8QUUhQFyZI/mqdefault.jpg'
     }
   ];
 
-  // Vidéo actuellement sélectionnée dans le grand lecteur
   let currentVideo = videos[0];
 
   function selectVideo(video) {
@@ -46,10 +69,21 @@
       <a class="cartedumonderetour" href="{base}/design">← Retour</a>
 
       <div class="audiovisuel-layout">
-        <!-- Lecteur principal responsive 16:9 -->
+        <!-- Lecteur principal auto-adaptatif (16:9 ou 9:16) -->
         <div class="video-main-display">
-          <div class="video-player-frame">
-            {#if currentVideo.type === 'playlist'}
+          <div class="video-player-frame" class:is-vertical={currentVideo.aspect === '9/16'}>
+            {#if currentVideo.type === 'local'}
+              <video 
+                src={currentVideo.src} 
+                controls 
+                autoplay 
+                muted 
+                playsinline 
+                loop
+              >
+                Votre navigateur ne supporte pas la lecture de vidéo.
+              </video>
+            {:else if currentVideo.type === 'playlist'}
               <iframe
                 src="https://www.youtube.com/embed/videoseries?list={currentVideo.id}&autoplay=1&mute=1&playsinline=1"
                 title={currentVideo.title}
@@ -75,7 +109,7 @@
           </div>
         </div>
 
-        <!-- Liste / Grille de sélection des projets vidéo -->
+        <!-- Liste / Grille latérale des réalisations -->
         <div class="video-grid-selection">
           <h3 class="selection-title">Sélectionner un projet</h3>
           
@@ -86,11 +120,11 @@
               on:click={() => selectVideo(video)}
             >
               <div class="video-card-thumb">
+                <img src={video.thumb} alt={video.title} />
                 {#if video.type === 'playlist'}
-                  <img src="https://img.youtube.com/vi/edfD7uzSJkc/mqdefault.jpg" alt={video.title} />
                   <span class="playlist-badge">Playlist</span>
-                {:else}
-                  <img src="https://img.youtube.com/vi/{video.id}/mqdefault.jpg" alt={video.title} />
+                {:else if video.aspect === '9/16'}
+                  <span class="vertical-badge">Vertical</span>
                 {/if}
               </div>
 

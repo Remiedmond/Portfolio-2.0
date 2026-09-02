@@ -7,18 +7,30 @@
   let isIntersecting = false;
 
   onMount(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      // LOG POUR DEBUG
-      console.log("Élément détecté :", entry.target, "Visible :", entry.isIntersecting);
-      
-      if (entry.isIntersecting) {
-        isIntersecting = true;
-        observer.unobserve(element); 
+    if (!element) return;
+
+    // 1. Sécurité : si l'élément est déjà dans le viewport au montage, on affiche direct
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      isIntersecting = true;
+      return;
+    }
+
+    // 2. Observer classique pour les éléments hors écran
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            isIntersecting = true;
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0,            // Déclenche dès le moindre pixel
+        rootMargin: "100px 0px"  // Pré-charge 100px avant que l'élément n'entre dans l'écran
       }
-    }, { 
-      threshold: 0.05, // Déclenche dès que 5% est visible
-      rootMargin: "50px 0px" // Déclenche même si l'élément est encore 50px en dessous du bord
-    });
+    );
 
     observer.observe(element);
     return () => observer.disconnect();
@@ -38,12 +50,11 @@
 <style>
   .reveal {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
     transition-property: opacity, transform;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    /* Sécurité pour ne pas bloquer le layout */
-    width: 100%; 
-    min-height: 10px; 
+    width: 100%;
+    will-change: opacity, transform;
   }
 
   .animate-in {

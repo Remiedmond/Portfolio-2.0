@@ -1,0 +1,22 @@
+/* src/app.css */
+  .app {
+    min-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .app.loaded {
+    opacity: 1;
+  }
+  
+  main {
+    margin: 0 auto;
+  }
+ body {
+  margin: 0;
+  padding: 0;
+}
+  
+  :global(html) {
+    scroll-behavior: smooth;
+  }

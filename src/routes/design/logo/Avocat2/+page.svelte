@@ -1,113 +1,185 @@
 <script>
-import bannière from '../../../../img/Bannière.png';
-import cartedumonde from '../../../../img/carte-du-monde.png';
-import LogoAna from '../../../../img/design/logo Ana avocat.png';
-import LogoCabinet from '../../../../img/design/cabinetavocat2.png';
+    import bannière from "../../../../img/Bannière.png";
+    import cartedumonde from "../../../../img/carte-du-monde.png";
+    import LogoAna from "../../../../img/design/logo Ana avocat.png";
+    import LogoCabinet from "../../../../img/design/cabinetavocat2.png";
 
-import '../.././design.css';
-import { base } from '$app/paths';
+    import "../.././design.css";
+    import { base } from "$app/paths";
 
+    const images = [
+        {
+            id: 1,
+            url: LogoAna,
+            alt: "Logo de l’avocate Maitre Ana DA COSTA FARIA",
+            title: "Logo de l’avocate Maitre Ana DA COSTA FARIA",
+        },
+        {
+            id: 2,
+            url: LogoCabinet,
+            alt: "Logo du cabinet d’avocats",
+            title: "Logo sur un cabinet d’avocats",
+        },
+    ];
 
-const images = [
-  {
-    id: 1,
-    url: LogoAna,
-    alt: 'Logo de l’avocate Maitre Ana DA COSTA FARIA',
-    title: "Logo de l’avocate Maitre Ana DA COSTA FARIA"
-  },
-  {
-    id: 2,
-    url: LogoCabinet,
-    alt: 'Logo du cabinet d’avocats',
-    title: 'Logo sur un cabinet d’avocats'
-  }
-];
+    let selectedImage = images[0];
 
-let selectedImage = images[0];
-
-
-function selectImage(image) {
-  selectedImage = image;
-}
-
-
-
+    function selectImage(image) {
+        selectedImage = image;
+    }
 </script>
 
-
 <div class="designglobal">
-  <img class="banniere" src={bannière} alt="Bannière">
+    <img class="banniere" src={bannière} alt="Bannière" />
 
-  <div class="couleurbackroungd">
-    <a class='cartedumonderetour' href='{base}/design/logo'>Retour</a>
-    
+    <div class="couleurbackroungd">
+        <a class="cartedumonderetour" href="{base}/design/logo">Retour</a>
 
-    <div class="gallery-container">
-        <div class="gallery-omages">
-            <h2 class="gallery-title">Logo de l’avocate Maitre Ana DA COSTA FARIA</h2>
-            
-            <!-- Image principale -->
-            <div class="main-image-container">
-                <div class="main-image-wrapper">
-                <div class="main-image-shadow"></div>
-                <div class="main-image-card">
-                    <img src={selectedImage.url} alt={selectedImage.alt} class="main-image">
-                    <div class="image-overlay">{selectedImage.id}/{images.length}</div>
-                    <div class="image-caption">{selectedImage.title}</div>
-                </div>
-                </div>
-            </div>
+        <div class="gallery-container">
+            <div class="gallery-omages">
+                <h2 class="gallery-title">
+                    Logo de l’avocate Maitre Ana DA COSTA FARIA
+                </h2>
 
-            <!-- Miniatures -->
-            <div class="thumbnails-container">
-                {#each images as image}
-                <button 
-                    class="thumbnail-wrapper {selectedImage.id === image.id ? 'active' : ''}"
-                    on:click={() => selectImage(image)}
-                >
-                    <div class="thumbnail-shadow"></div>
-                    <div class="thumbnail-card">
-                    <img src={image.url} alt={image.alt} class="thumbnail">
-                    {#if selectedImage.id === image.id}
-                        <div class="active-indicator">
-                        <div class="indicator-dot"></div>
+                <!-- Image principale -->
+                <div class="main-image-container">
+                    <div class="main-image-wrapper">
+                        <div class="main-image-shadow"></div>
+                        <div class="main-image-card">
+                            <img
+                                src={selectedImage.url}
+                                alt={selectedImage.alt}
+                                class="main-image"
+                            />
+                            <div class="image-overlay">
+                                {selectedImage.id}/{images.length}
+                            </div>
+                            <div class="image-caption">
+                                {selectedImage.title}
+                            </div>
                         </div>
-                    {/if}
                     </div>
-                </button>
-                {/each}
-            </div>
+                </div>
 
+                <!-- Miniatures -->
+                <div class="thumbnails-container">
+                    {#each images as image}
+                        <button
+                            class="thumbnail-wrapper {selectedImage.id ===
+                            image.id
+                                ? 'active'
+                                : ''}"
+                            on:click={() => selectImage(image)}
+                        >
+                            <div class="thumbnail-shadow"></div>
+                            <div class="thumbnail-card">
+                                <img
+                                    src={image.url}
+                                    alt={image.alt}
+                                    class="thumbnail"
+                                />
+                                {#if selectedImage.id === image.id}
+                                    <div class="active-indicator">
+                                        <div class="indicator-dot"></div>
+                                    </div>
+                                {/if}
+                            </div>
+                        </button>
+                    {/each}
+                </div>
+            </div>
+            <div class="gallery-blabla">
+                <p>
+                    <strong>Identité visuelle pour Ana Da Costa Faria</strong>
+                </p>
+
+                <p>
+                    Logo réalisé pour Ana Da Costa Faria, future avocate
+                    souhaitant développer une identité visuelle personnelle et
+                    professionnelle. L’objectif était de concevoir un symbole à
+                    la fois sérieux, élégant et facilement identifiable, capable
+                    de traduire son domaine d’activité tout en évoquant ses
+                    origines portugaises.
+                </p>
+
+                <p>
+                    <strong>Le concept :</strong><br />
+                    Le logo repose sur l’association des lettres « A », « C » et
+                    « F », correspondant aux initiales du nom Ana Da Costa Faria.
+                    Ces lettres sont fusionnées afin de former un monogramme compact,
+                    reconnaissable et adapté à différents supports de communication.
+                </p>
+
+                <p>
+                    La composition intègre également une référence au blason
+                    portugais. La forme extérieure du logo reprend les codes
+                    visuels d’un écu, très présents dans l’architecture,
+                    l’héraldique et les symboles traditionnels portugais. Ce
+                    choix permet de rappeler les origines de la cliente tout en
+                    donnant au logo une apparence institutionnelle et
+                    intemporelle.
+                </p>
+
+                <p>
+                    <strong>Tradition et modernité :</strong><br />
+                    L’intention était de créer un équilibre entre tradition et modernité.
+                    La forme du blason et la construction du monogramme évoquent
+                    l’histoire, la stabilité et la légitimité, tandis que la simplification
+                    des formes et l’utilisation d’un symbole épuré inscrivent l’identité
+                    dans une approche plus contemporaine.
+                </p>
+
+                <p>
+                    Les lignes droites apportent une impression de précision, de
+                    méthode et de rigueur, des qualités essentielles dans le
+                    domaine juridique. À l’inverse, les courbes adoucissent
+                    l’ensemble et suggèrent la proximité, l’écoute et la
+                    souplesse dans l’accompagnement des clients. La combinaison
+                    de ces formes permet ainsi d’éviter un rendu trop strict ou
+                    trop froid.
+                </p>
+
+                <p>
+                    <strong>La construction graphique :</strong><br />
+                    Le monogramme a été conçu comme un élément central et autonome.
+                    Les lettres s’imbriquent à l’intérieur du blason afin de créer
+                    une forme équilibrée et facilement mémorisable. La symétrie générale
+                    renforce l’idée d’équité, de stabilité et de justice, tandis
+                    que l’encadrement blanc permet de détacher clairement le symbole
+                    de son arrière-plan.
+                </p>
+
+                <p>
+                    <strong>Les déclinaisons :</strong><br />
+                    Plusieurs variantes colorées ont été étudiées afin d’évaluer
+                    les différentes perceptions du logo. Les teintes dorées et cuivrées
+                    évoquent l’élégance, la valeur et le caractère institutionnel.
+                    Une version monochrome a également été développée pour garantir
+                    une utilisation plus flexible sur des documents professionnels,
+                    des cartes de visite, des signatures électroniques ou des supports
+                    imprimés.
+                </p>
+
+                <p>
+                    <strong>L’intention :</strong><br />
+                    Ce logo cherche à transmettre une image professionnelle, fiable
+                    et accessible. Il doit permettre à Ana Da Costa Faria de construire
+                    une identité reconnaissable, tout en mettant en valeur son parcours
+                    et son héritage culturel. Le blason portugais n’est donc pas
+                    utilisé comme une simple décoration : il constitue un élément
+                    de sens qui relie l’identité professionnelle à ses origines.
+                </p>
+
+                <p>
+                    <strong>Conclusion :</strong><br />
+                    Ce projet m’a permis de travailler sur la création d’une identité
+                    visuelle personnelle dans un secteur où la confiance, la rigueur
+                    et la crédibilité sont essentielles. En associant un monogramme
+                    contemporain à une forme inspirée de l’héraldique portugaise,
+                    j’ai cherché à créer un logo à la fois professionnel, symbolique
+                    et intemporel.
+                </p>
+            </div>
         </div>
-        <div class="gallery-blabla">
-    <p>Ce nouveau logo "Talents en Scène" modernise l’identité visuelle de l’association culturelle de Beaurains en reflétant son ouverture artistique et son esprit collectif.</p>
-    
-    <div class="horaires">
-        <p><strong>L’association :</strong></p>
-        <p>Nom : Talents en Scène</p>
-        <p>Ville : Beaurains</p>
-        <p>Domaines : Danse, chant, théâtre, acting, expression scénique</p>
-        <p>Support : Identité visuelle officielle</p>
     </div>
-    
-    <p><strong>Le design du logo :</strong>
-    Le logo met en avant une scène stylisée, encadrée de rideaux rouges et surplombée d’un micro suspendu. Cette mise en scène traduit l’idée d’un lieu où chaque talent peut s’exprimer, qu’il soit chanteur, danseur ou comédien.
-    </p>
-    
-    <p><strong>L’identité visuelle :</strong>
-    L’association a choisi une palette de couleurs dynamiques : le rouge des rideaux pour l’énergie et la passion, le violet pour la créativité et l’expression artistique, et le jaune lumineux pour la visibilité et l’optimisme. Le texte en lettres capitales, orné d’un effet lumineux, évoque les enseignes de spectacle et de cabaret.
-    </p>
-    
-    <p><strong>La symbolique :</strong>
-    La scène ouverte et le micro central incarnent l’idée de partage et de mise en avant de chaque talent. Les rideaux entrouverts invitent à la découverte et à l’émerveillement, tout en symbolisant l’esprit collectif et la diversité des pratiques artistiques.
-    </p>
-    
-    <p><strong>Le renouvellement :</strong>
-    Ce logo constitue une étape importante dans la structuration de l’association, en apportant une identité claire et fédératrice. Il sera décliné sur les supports de communication (affiches, réseaux sociaux, programmes) pour renforcer la visibilité de Talents en Scène.
-    </p>
-    
-    <p>Avec ce logo, "Talents en Scène" affirme son ambition de devenir un espace incontournable de création et d’expression artistique à Beaurains, rassemblant passionnés et curieux autour de la danse, du chant, du théâtre et de toutes les formes de performance.</p>
-</div>
-    </div>
-  </div>
 </div>

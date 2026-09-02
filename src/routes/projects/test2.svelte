@@ -11,6 +11,8 @@ import Bddimg from '../../img/series.png';
 import Duckescapeimg from '../../img/duckescape.png';
 import Friseimg from '../../img/frise.png';
 import Escapeimg from '../../img/escape.png';
+import Polarizimg from '../../img/polariz.png';
+import DTC from '../../img/DTC.png';
 import './projects.css';
 
   let pagea = ''; 
@@ -33,6 +35,8 @@ import './projects.css';
   import Duckescape from "./duckescape.svelte";
   import Frise from "./frise.svelte";
   import Escape from "./escape.svelte";
+  import Polariz from "./polariz.svelte";
+  import DansTaChope from "./danstachope.svelte";
 
 
 </script>
@@ -69,9 +73,18 @@ import './projects.css';
   <Frise />
 {:else if pagea === 'Escape'}
   <Escape />
+{:else if pagea === 'Polariz'}
+  <Polariz />
+{:else if pagea === 'DansTaChope'}
+  <DansTaChope />
 {:else}
  
  <div class="imageweb">
+ <div class="image-container">
+    <a class=" {pagea === 'DansTaChope' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('DansTaChope')}>
+      <img src={DTC} alt="Image Logo Dans Ta Chope">
+    </a> 
+  </div>
   <div class="image-container">
     <a class=" {pagea === 'Playlist' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Playlist')}>
       <img src={Laplaylistimg} alt="Image Logo la Playlist festival">
@@ -84,12 +97,12 @@ import './projects.css';
   </div>
   <div class="image-container">
     <a class=" {pagea === 'Instaphp' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Instaphp')}>
-      <img src={Instaphpimg} alt="Image Logo la Playlist festival">
+      <img src={Instaphpimg} alt="Image Logo Instagram">
     </a> 
   </div>
   <div class="image-container">
     <a class=" {pagea === 'BDDprojet' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('BDDprojet')}>
-      <img src={Bddimg} alt="Image Logo la Playlist festival">
+      <img src={Bddimg} alt="Image Logo BDD projet">
     </a> 
   </div>    
 </div> 

@@ -35,10 +35,10 @@ import LogoCabinet from '../../../img/design/cabinetavocat2.png';
             <a class="cartedumondemusiqua" href="{base}/design/logo/JES">
               <img class="cartedumondestcecile" src={LogoJESdehors} alt="Logo JES" />
             </a>
-            <a class="cartedumondemusiqua" href="{base}/design/logo/CRIPS">
+            <a class="cartedumondemusiqua" href="{base}/design/logo/crips">
               <img class="cartedumondebanniere" src={Logocripsdehors} alt="Logo CRIPS" />
             </a>
-              <a class="cartedumondemusiqua" href="{base}/design/logo/Talentsenscène">
+              <a class="cartedumondemusiqua" href="{base}/design/logo/TES">
               <img class="cartedumondeamicale" src={Logotalentsenscènedehors} alt="Logo Talents en Scène" />
             </a>
         </div>

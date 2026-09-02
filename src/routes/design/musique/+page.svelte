@@ -57,7 +57,7 @@ import { base } from '$app/paths';
             <a class="cartedumondemusiqua" href="{base}/design/musique/depliant">
               <img class="cartedumondedepliant" src={depliantdehorsimg} alt="Dépliant" />
             </a>
-            <a class="cartedumondemusiqua" href="{base}/design/musique/duckescape">
+            <a class="cartedumondemusiqua" href="{base}/design/musique/duckpartition">
               <img class="cartedumondedepliant" src={ducklogo} alt="Duck Escape" />
             </a>
         </div>

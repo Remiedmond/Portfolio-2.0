@@ -12,6 +12,7 @@ import Duckescapeimg from '../../img/duckescape.png';
 import Friseimg from '../../img/frise.png';
 import Escapeimg from '../../img/escape.png';
 import Polarizimg from '../../img/polariz.png';
+import DTC from '../../img/DTC.png';
 import './projects.css';
 
   let pagea = ''; 
@@ -35,6 +36,7 @@ import './projects.css';
   import Frise from "./frise.svelte";
   import Escape from "./escape.svelte";
   import Polariz from "./polariz.svelte";
+  import DansTaChope from "./danstachope.svelte";
 
 
 </script>
@@ -72,9 +74,16 @@ import './projects.css';
   <Escape />
 {:else if pagea === 'Polariz'}
   <Polariz />
+{:else if pagea === 'DansTaChope'}
+  <DansTaChope />
 {:else}
  
  <div class="imageweb">
+  <div class="image-container">
+    <a class=" {pagea === 'Polariz' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Polariz')}>
+      <img src={Polarizimg} alt="Image logo Polariz">
+    </a>
+</div> 
   <div class="image-container">
     <a class=" {pagea === 'Snow' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Snow')}>
       <img src={montagnee} alt="Image Snowboard">
@@ -95,11 +104,7 @@ import './projects.css';
       <img src={Gsapimg} alt="Image GSAP">
     </a> 
   </div>
-  <div class="image-container">
-    <a class=" {pagea === 'Polariz' ? 'active' : ''}" href="#" on:click|preventDefault={() => show('Polariz')}>
-      <img src={Polarizimg} alt="Image logo Polariz">
-    </a>
-</div> 
+ 
 </div>
 {/if}
 
