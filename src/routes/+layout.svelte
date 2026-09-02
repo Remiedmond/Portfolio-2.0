@@ -1,28 +1,30 @@
 <!-- src/routes/+layout.svelte -->
 <script>
- import '../app.css';
+  import '../app.css';
   import { onMount } from 'svelte';
-  import { browser } from '$app/environment';
+  import { browser, dev } from '$app/environment';
   import Loader from '$lib/components/Loader.svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  
+  import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+  injectAnalytics({ mode: dev ? 'development' : 'production' });
+
+  let { children } = $props();
+
   let isLoading = true;
   let hasLoadedBefore = false;
-  
+
   onMount(() => {
-    // Vérifier si l'utilisateur a déjà visité le site dans cette session
     if (browser) {
       hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore') === 'true';
-      
+
       if (!hasLoadedBefore) {
-        // Premier chargement - afficher le loader
         setTimeout(() => {
           isLoading = false;
           sessionStorage.setItem('hasLoadedBefore', 'true');
-        }, 3000); // Durée minimale du chargement
+        }, 3000);
       } else {
-        // Déjà chargé - pas de loader
         isLoading = false;
       }
     }
@@ -30,8 +32,8 @@
 </script>
 
 <svelte:head>
-  <title>Mon Portfolio</title>
-  <meta name="description" content="Portfolio personnel" />
+  <title>Rémi Edmond | Développeur Web</title>
+  <meta name="description" content="Portfolio de Rémi Edmond - Développeur Web." />
 </svelte:head>
 
 {#if isLoading && !hasLoadedBefore}
@@ -41,8 +43,7 @@
 <div class="app" class:loaded={!isLoading}>
   <Header />
   <main>
-    <slot />
+    {@render children?.()}
   </main>
-  
   <Footer />
 </div>
