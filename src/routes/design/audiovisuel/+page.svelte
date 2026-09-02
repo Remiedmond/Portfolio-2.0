@@ -21,7 +21,7 @@
       desc: 'Reportage et valorisation de la zone humide préservée par la commune et la communauté urbaine d’Arras (gestion différenciée, triton crêté et promenade du Crinchon).',
       type: 'local',
       aspect: '9/16',
-      thumb: `${base}/img/achicourt.png` // Ou une capture du début de la vidéo
+      thumb: `${base}/img/achicourt.png`  // Ou une capture du début de la vidéo
     },
     {
       id: 'QyEcFmxvOCU',
