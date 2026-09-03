@@ -55,10 +55,44 @@
       destroy() { observer.disconnect(); }
     };
   }
+
+  // Configuration des données structurées Schema.org
+  const schemaOrgPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rémi Edmond",
+    "url": "https://www.remi-edmond.fr",
+    "jobTitle": "Développeur Web Full-Stack & DevOps",
+    "description": "Développeur web spécialisé en SvelteKit, React, Node.js et écosystèmes DevOps.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Arras",
+      "addressRegion": "Hauts-de-France",
+      "addressCountry": "FR"
+    },
+    // Liens vers tes profils publics officiels (aide Google à faire le lien d'entité)
+    "sameAs": [
+      "https://github.com/ton-pseudo-github",
+      "https://www.linkedin.com/in/ton-profil-linkedin"
+    ],
+    "knowsAbout": [
+      "Web Development",
+      "SvelteKit",
+      "React",
+      "Node.js",
+      "DevOps",
+      "Tailwind CSS",
+      "Git"
+    ]
+  };
+
+  const jsonLdScript = `<script type="application/ld+json">${JSON.stringify(schemaOrgPerson)}</${'script'}>`;
 </script>
 
 <svelte:head>
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Injection sécurisée du JSON-LD -->
+  {@html jsonLdScript}
 </svelte:head>
 
 <div class="video-container">
