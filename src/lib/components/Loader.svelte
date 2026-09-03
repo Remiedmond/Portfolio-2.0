@@ -4,7 +4,6 @@
   import { fade, scale } from 'svelte/transition';
   import logo from '../../img/logo.png';
 
-  // Compatible Svelte 5 (avec fallback Svelte 4)
   let { onFinish } = $props();
 
   let progress = $state(0);
@@ -19,14 +18,13 @@
   ];
 
   onMount(() => {
-    const totalDuration = 2500; // 2,5 secondes au total
+    const totalDuration = 2500;
     const intervalTime = 30;
-    const increment = (100 / (totalDuration / intervalTime));
+    const increment = 100 / (totalDuration / intervalTime);
 
     const timer = setInterval(() => {
       progress = Math.min(progress + increment, 100);
 
-      // Met à jour le texte en fonction du palier
       const current = loadingSteps.find(step => progress <= step.threshold);
       if (current) {
         loadingText = current.text;
@@ -81,46 +79,6 @@
   </div>
 {/if}
 
-{#if isLoading}
-  <div 
-    class="loader-container" 
-    transition:fade={{ duration: 500 }}
-  >
-    <div class="loader-content" transition:scale={{ duration: 300, delay: 200 }}>
-      <!-- Logo ou titre du site -->
-      <div class="logo">
-        <img class="logoimgprofil" src={logo}>
-        <h1>Portfolio Rémi EDMOND</h1>
-      </div>
-      
-      <!-- Barre de progression -->
-      <div class="progress-container">
-        <div class="progress-bar">
-          <div 
-            class="progress-fill" 
-            style="width: {progress}%"
-          ></div>
-        </div>
-        <div class="progress-text">
-          {Math.round(progress)}%
-        </div>
-      </div>
-      
-      <!-- Texte de chargement -->
-      <div class="loading-text">
-        {loadingText}
-      </div>
-      
-      <!-- Animation de points -->
-      <div class="loading-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-{/if}
-
 <style>
   .loader-container {
     position: fixed;
@@ -150,7 +108,7 @@
     letter-spacing: 2px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
   }
-  .logoimgprofil{
+  .logoimgprofil {
     width: 50%;
   }
   .progress-container {
@@ -230,12 +188,10 @@
     }
   }
   
-  /* Responsive */
   @media (max-width: 768px) {
     .loader-content {
       padding: 1rem;
     }
-    
     .logo h1 {
       font-size: 2rem;
     }
