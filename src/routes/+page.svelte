@@ -72,8 +72,9 @@
     },
     // Liens vers tes profils publics officiels (aide Google à faire le lien d'entité)
     "sameAs": [
-      "https://github.com/ton-pseudo-github",
-      "https://www.linkedin.com/in/ton-profil-linkedin"
+      "https://github.com/Remiedmond",
+      "https://www.linkedin.com/in/rémi-edmond-375255286/",
+      "https://www.instagram.com/remi.edm.crea/",
     ],
     "knowsAbout": [
       "Web Development",
