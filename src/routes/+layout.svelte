@@ -35,7 +35,19 @@
 
 <svelte:head>
   <title>Rémi Edmond | Développeur Web</title>
-  <meta name="description" content="Portfolio de Rémi Edmond - Développeur Web." />
+  <meta 
+    name="description" 
+    content="Portfolio de Rémi Edmond, développeur web et futur expert DevOps. Découvrez mes projets, compétences full-stack et réalisations techniques." 
+  />
+
+  <!-- Balises Open Graph pour les aperçus LinkedIn / réseaux sociaux -->
+  <meta property="og:title" content="Rémi Edmond | Développeur Web" />
+  <meta 
+    property="og:description" 
+    content="Portfolio de Rémi Edmond, développeur web et futur expert DevOps. Découvrez mes projets et réalisations techniques." 
+  />
+  <meta property="og:url" content="https://www.remi-edmond.fr" />
+  <meta property="og:type" content="website" />
 </svelte:head>
 
 {#if isLoading && !hasLoadedBefore}
