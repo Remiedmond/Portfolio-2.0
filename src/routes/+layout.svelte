@@ -12,23 +12,25 @@
 
   let { children } = $props();
 
-  let isLoading = true;
-  let hasLoadedBefore = false;
+  // Déclaration avec les runes Svelte 5
+  let isLoading = $state(true);
+  let hasLoadedBefore = $state(false);
 
   onMount(() => {
     if (browser) {
       hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore') === 'true';
-
-      if (!hasLoadedBefore) {
-        setTimeout(() => {
-          isLoading = false;
-          sessionStorage.setItem('hasLoadedBefore', 'true');
-        }, 3000);
-      } else {
+      if (hasLoadedBefore) {
         isLoading = false;
       }
     }
   });
+
+  function handleFinish() {
+    isLoading = false;
+    if (browser) {
+      sessionStorage.setItem('hasLoadedBefore', 'true');
+    }
+  }
 </script>
 
 <svelte:head>
@@ -37,12 +39,8 @@
 </svelte:head>
 
 {#if isLoading && !hasLoadedBefore}
-  <Loader onFinish={() => {
-    isLoading = false;
-    sessionStorage.setItem('hasLoadedBefore', 'true');
-  }} />
+  <Loader onFinish={handleFinish} />
 {/if}
-
 
 <div class="app" class:loaded={!isLoading}>
   <Header />
