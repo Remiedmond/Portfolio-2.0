@@ -2,50 +2,84 @@
 <script>
   import { onMount } from 'svelte';
   import { fade, scale } from 'svelte/transition';
-  
   import logo from '../../img/logo.png';
-  
-  export let isLoading = true;
-  
-  let progress = 0;
-  let loadingText = "Chargement en cours...";
-  
+
+  // Compatible Svelte 5 (avec fallback Svelte 4)
+  let { onFinish } = $props();
+
+  let progress = $state(0);
+  let loadingText = $state("Initialisation...");
+  let isVisible = $state(true);
+
   const loadingSteps = [
-    { text: "Initialisation...", duration: 800 },
-    { text: "Chargement des ressources...", duration: 1200 },
-    { text: "Préparation de l'interface...", duration: 600 },
-    { text: "Finalisation...", duration: 400 }
+    { text: "Initialisation...", threshold: 25 },
+    { text: "Chargement des ressources...", threshold: 65 },
+    { text: "Préparation de l'interface...", threshold: 90 },
+    { text: "Finalisation...", threshold: 100 }
   ];
-  
+
   onMount(() => {
-    startLoading();
+    const totalDuration = 2500; // 2,5 secondes au total
+    const intervalTime = 30;
+    const increment = (100 / (totalDuration / intervalTime));
+
+    const timer = setInterval(() => {
+      progress = Math.min(progress + increment, 100);
+
+      // Met à jour le texte en fonction du palier
+      const current = loadingSteps.find(step => progress <= step.threshold);
+      if (current) {
+        loadingText = current.text;
+      }
+
+      if (progress >= 100) {
+        clearInterval(timer);
+        setTimeout(() => {
+          isVisible = false;
+          if (onFinish) onFinish();
+        }, 300);
+      }
+    }, intervalTime);
+
+    return () => clearInterval(timer);
   });
-  
-  async function startLoading() {
-    let currentStep = 0;
-    let totalDuration = loadingSteps.reduce((acc, step) => acc + step.duration, 0);
-    let elapsedTime = 0;
-    
-    for (const step of loadingSteps) {
-      loadingText = step.text;
-      
-      const stepInterval = setInterval(() => {
-        elapsedTime += 50;
-        progress = Math.min((elapsedTime / totalDuration) * 100, 100);
-        
-        if (elapsedTime >= totalDuration) {
-          clearInterval(stepInterval);
-          setTimeout(() => {
-            isLoading = false;
-          }, 500);
-        }
-      }, 50);
-      
-      await new Promise(resolve => setTimeout(resolve, step.duration));
-      currentStep++;
-    }
-  }
 </script>
+
+{#if isVisible}
+  <div 
+    class="loader-container" 
+    transition:fade={{ duration: 400 }}
+  >
+    <div class="loader-content" transition:scale={{ duration: 300, delay: 100 }}>
+      <div class="logo">
+        <img class="logoimgprofil" src={logo} alt="Logo" />
+        <h1>Portfolio Rémi EDMOND</h1>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div 
+            class="progress-fill" 
+            style="width: {progress}%"
+          ></div>
+        </div>
+        <div class="progress-text">
+          {Math.round(progress)}%
+        </div>
+      </div>
+      
+      <div class="loading-text">
+        {loadingText}
+      </div>
+      
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+{/if}
 
 {#if isLoading}
   <div 

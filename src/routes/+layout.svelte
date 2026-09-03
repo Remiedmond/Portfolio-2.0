@@ -37,8 +37,12 @@
 </svelte:head>
 
 {#if isLoading && !hasLoadedBefore}
-  <Loader bind:isLoading />
+  <Loader onFinish={() => {
+    isLoading = false;
+    sessionStorage.setItem('hasLoadedBefore', 'true');
+  }} />
 {/if}
+
 
 <div class="app" class:loaded={!isLoading}>
   <Header />
